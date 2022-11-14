@@ -366,7 +366,7 @@ watch(
               outer-class="mb-0"
             />
             <rs-button
-              class="!px-3 sm:!px-6"
+              class="!px-3 sm:!px-6 bg-primary-800"
               @click="openFilter ? (openFilter = false) : (openFilter = true)"
             >
               <Icon
@@ -419,14 +419,14 @@ watch(
     >
       <div class="flex flex-wrap items-center justify-start gap-x-2">
         <div
-          class="flex items-center justify-center gap-x-2 border border-primary-400 text-primary-400 rounded-lg py-1 px-2"
+          class="flex items-center justify-center gap-x-2 border border-primary-800 text-primary-800 rounded-lg py-1 px-2"
           v-for="(val, index) in filterComputed"
           :key="index"
         >
           {{ val ? camelCasetoTitle(val.title) : "" }}
           <Icon
             name="ic:round-close"
-            class="mr-0 md:mr-1 hover:text-red-500 cursor-pointer"
+            class="mr-0 md:mr-1 hover:text-red-800 cursor-pointer"
             size="1rem"
             @click="hideColumn(val.title)"
           ></Icon>
@@ -450,7 +450,7 @@ watch(
               'border-y': !options.borderless,
               'border-gray-200 bg-gray-100 dark:bg-gray-800':
                 options.variant === 'default',
-              'border-primary-200 bg-primary-400 text-white ':
+              'border-primary-200 bg-primary-800 text-white ':
                 options.variant === 'primary',
               'border-gray-200 bg-secondary text-white':
                 options.variant === 'secondary',
@@ -471,12 +471,12 @@ watch(
                   'border-r last:border-l last:border-r-0':
                     options.bordered && !options.borderless,
                   'border-gray-300': options.variant === 'default',
-                  'border-primary-300': options.variant === 'primary',
+                  'border-primary-800': options.variant === 'primary',
                   'border-gray-300': options.variant === 'secondary',
                   'border-blue-300': options.variant === 'info',
                   'border-green-300': options.variant === 'success',
                   'border-orange-300': options.variant === 'warning',
-                  'border-red-300': options.variant === 'danger',
+                  'border-red-800': options.variant === 'danger',
                   'w-36': options.fixed,
                   'cursor-pointer': optionsAdvanced.sortable && advanced,
                 }"
@@ -623,7 +623,7 @@ watch(
       <div class="table-footer-page">
         <rs-button
           variant="primary-outline"
-          class="rounded-full !p-1 w-8 h-8"
+          class="rounded-full !p-1 w-8 h-8 text-primary-800 bg-primary-800"
           @click="firstPage"
           :disabled="currentPage == 1"
         >
@@ -631,7 +631,7 @@ watch(
         </rs-button>
         <rs-button
           variant="primary-outline"
-          class="rounded-full !p-1 w-8 h-8"
+          class="rounded-full !p-1 w-8 h-8 text-red-800 bg-primary-800"
           @click="prevPage"
           :disabled="currentPage == 1"
         >
@@ -639,7 +639,7 @@ watch(
         </rs-button>
         <rs-button
           :variant="currentPage == val ? 'primary' : 'primary-outline'"
-          class="rounded-full !p-1 w-8 h-8"
+          class="rounded-full !p-1 w-8 h-8 bg-primary-800 text-white"
           v-for="(val, index) in pages"
           :key="index"
           @click="pageChange(val)"
@@ -648,7 +648,7 @@ watch(
         </rs-button>
         <rs-button
           variant="primary-outline"
-          class="rounded-full !p-1 w-8 h-8"
+          class="rounded-full !p-1 w-8 h-8 bg-primary-800 text-white"
           @click="nextPage"
           :disabled="currentPage == totalPage"
         >
@@ -656,7 +656,7 @@ watch(
         </rs-button>
         <rs-button
           variant="primary-outline"
-          class="rounded-full !p-1 w-8 h-8"
+          class="rounded-full !p-1 w-8 h-8 bg-primary-800 text-white"
           @click="lastPage"
           :disabled="currentPage == totalPage"
         >

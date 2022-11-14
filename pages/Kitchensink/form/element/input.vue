@@ -1,6 +1,6 @@
 <script setup>
 definePageMeta({
-  title: "Input",
+  title: "Form Input",
 });
 
 const key = ref("jg9dsk23rnfsd");
@@ -12,6 +12,13 @@ const generateKey = () => {
 const computedKey = computed(() => {
   return key.value;
 });
+
+const { pending, data: count } = useLazyAsyncData('count', () => $fetch('/api/hello'))
+watch(count, (newCount) => {
+  // Because count starts out null, you won't have access
+  // to its contents immediately, but you can watch it.
+})
+
 </script>
 
 <template>
@@ -35,6 +42,7 @@ const computedKey = computed(() => {
           >
           which is a powerfull form builder for Vue. It is a Vue component that
           allows you to create forms with a lot of different elements.
+          {{ data }}
         </p>
       </template>
     </rs-card>
@@ -42,7 +50,7 @@ const computedKey = computed(() => {
     <rs-card>
       <template #header>Basic Input</template>
       <template #body>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-5">
           <FormKit type="text" label="Basic" />
           <FormKit
             type="text"

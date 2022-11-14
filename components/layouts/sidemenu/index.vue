@@ -26,7 +26,7 @@ onMounted(() => {
   >
     <div class="py-2 px-4">
       <div class="flex flex-auto gap-3 justify-center items-center">
-        <img
+        <!-- <img
           class="h-10 w-10 block dark:hidden"
           src="@/assets/img/logo/logo.png"
           alt=""
@@ -35,9 +35,9 @@ onMounted(() => {
           class="h-10 w-10 hidden dark:block"
           src="@/assets/img/logo/logo-white.png"
           alt=""
-        />
-        <span class="text-xl font-semibold text-primary-500 dark:text-white"
-          >Rose UI</span
+        /> -->
+        <span class="text-xl font-semibold text-primary-800 dark:text-white"
+          >Biz Amal</span
         >
       </div>
     </div>

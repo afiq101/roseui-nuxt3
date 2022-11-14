@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-  title: "RoseUI - NuxtJS Admin Dashboard Template",
+  title: "Biz Amal - Platform Wakaf Terbesar di Malaysia",
   description: "Home page",
   bodyAttrs: {
     class: "bg-gray-100 dark:bg-slate-900 text-gray-600 dark:text-gray-300",

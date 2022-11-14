@@ -23,22 +23,22 @@ $xlarge: 1280px;
 
     &.fc-button-primary {
       background-color: transparent !important;
-      color: #fb7185;
-      border-color: #fb7185 !important;
+      color: #a51f3e;
+      border-color: #a51f3e !important;
     }
 
     &.fc-button-active {
-      background-color: #fb7185 !important;
+      background-color: #a51f3e !important;
     }
 
     &:hover {
-      background-color: #fb7185 !important;
+      background-color: #a51f3e !important;
       color: white !important;
     }
 
     &:focus {
       box-shadow: 0 0 0 0.05rem rgba(255, 113, 133, 0.5) !important;
-      background-color: #fb7185 !important;
+      background-color: #a51f3e !important;
       color: white !important;
     }
   }
@@ -69,7 +69,7 @@ $xlarge: 1280px;
     }
 
     .fc-more-link {
-      color: #fb7185;
+      color: #a51f3e;
     }
   }
 
@@ -80,15 +80,15 @@ $xlarge: 1280px;
 
     .fc-h-event {
       &.fc-event-start {
-        border-color: #fb7185;
-        background-color: #fb7185;
+        border-color: #a51f3e;
+        background-color: #a51f3e;
       }
     }
   }
   .fc-list {
     .fc-list-event-dot {
-      background-color: #fb7185;
-      border: 5px solid #fb7185;
+      background-color: #a51f3e;
+      border: 5px solid #a51f3e;
     }
 
     .fc-list-day-cushion {
@@ -109,21 +109,21 @@ $xlarge: 1280px;
   .fc-button {
     &.fc-button-primary {
       background-color: transparent !important;
-      color: #fb7185;
-      border-color: #fb7185 !important;
+      color: #a51f3e;
+      border-color: #a51f3e !important;
     }
 
     &.fc-button-active {
-      background-color: #fb7185 !important;
+      background-color: #a51f3e !important;
     }
 
     &:hover {
-      background-color: #fb7185 !important;
+      background-color: #a51f3e !important;
     }
 
     &:focus {
       box-shadow: 0 0 0 0.05rem rgba(255, 113, 133, 0.5) !important;
-      background-color: #fb7185 !important;
+      background-color: #a51f3e !important;
       color: white !important;
     }
   }
@@ -156,15 +156,15 @@ $xlarge: 1280px;
     }
 
     .fc-more-link {
-      color: #fb7185;
+      color: #a51f3e;
     }
   }
 
   .fc-daygrid-event-harness {
     .fc-h-event {
       &.fc-event-start {
-        border-color: #fb7185;
-        background-color: #fb7185;
+        border-color: #a51f3e;
+        background-color: #a51f3e;
       }
     }
   }
@@ -172,8 +172,8 @@ $xlarge: 1280px;
     border-color: #334356 !important;
 
     .fc-list-event-dot {
-      background-color: #fb7185;
-      border: 5px solid #fb7185;
+      background-color: #a51f3e;
+      border: 5px solid #a51f3e;
     }
 
     .fc-list-day-cushion {

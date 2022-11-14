@@ -49,7 +49,7 @@ definePageMeta({
       <template #body>
         <FormKit
           type="color"
-          value="#FB7185"
+          value="#a51f3e"
           label="Select a color"
           help="Select your favorite color."
         />

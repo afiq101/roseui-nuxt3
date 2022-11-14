@@ -50,14 +50,14 @@ function toggleSearch() {
           />
           <span
             v-if="isDesktop"
-            class="text-xl font-semibold text-primary-500 dark:text-white"
+            class="text-xl font-semibold text-primary-800 dark:text-white"
             >Rose UI</span
           >
         </div>
       </div>
 
       <div class="flex gap-2 item-center justify-items-end">
-        <VDropdown placement="bottom-end" distance="13" name="language">
+        <!-- <VDropdown placement="bottom-end" distance="13" name="language">
           <button class="icon-btn h-10 w-10 rounded-full">
             <country-flag iso="GB" />
           </button>
@@ -89,18 +89,18 @@ function toggleSearch() {
               </li>
             </ul>
           </template>
-        </VDropdown>
-        <button class="icon-btn h-10 w-10 rounded-full" @click="setColorMode">
+        </VDropdown> -->
+        <!-- <button class="icon-btn h-10 w-10 rounded-full" @click="setColorMode">
           <Icon
             v-if="colorMode.preference != 'dark'"
             name="ic:outline-dark-mode"
             class=""
           />
           <Icon v-else name="ic:outline-wb-sunny" class="" />
-        </button>
-        <button class="icon-btn h-10 w-10 rounded-full">
+        </button> -->
+        <!-- <button class="icon-btn h-10 w-10 rounded-full">
           <Icon @click="toggleSearch" name="ic:round-search" class="" />
-        </button>
+        </button> -->
         <VTooltip>
           <template #popper> 10 unread notification </template>
           <VDropdown placement="bottom-end" distance="13" name="notification">

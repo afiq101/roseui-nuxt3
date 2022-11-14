@@ -31,10 +31,10 @@ function openMenu(event) {
 function activeMenu(routePath) {
   return route.path == routePath
     ? ` shadow-lg
-            shadow-primary-700/30
+            shadow-primary-800/30
             dark:shadow-primary-500/10
             text-white
-            bg-primary-400
+            bg-primary-800
             active-menu`
     : `transition-all	duration-300 hover:ml-4`;
 }

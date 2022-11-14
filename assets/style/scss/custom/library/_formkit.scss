@@ -37,7 +37,7 @@ $xlarge: 1280px;
           width: 0%;
           height: 8px;
           border-radius: 10px;
-          background-color: #fb7185;
+          background-color: #a51f3e;
           transition: width 0.25s ease-in;
         }
 
@@ -68,7 +68,7 @@ $xlarge: 1280px;
         }
 
         &[data-step-active="true"] {
-          color: #fb7185;
+          color: #a51f3e;
           font-weight: 600;
 
           .progress {
@@ -84,7 +84,7 @@ $xlarge: 1280px;
         }
 
         &[data-step-completed="true"] {
-          color: #fb7185;
+          color: #a51f3e;
           font-weight: 600;
           .progress {
             width: 100%;
@@ -126,7 +126,7 @@ $xlarge: 1280px;
           width: 0%;
           height: 8px;
           border-radius: 10px;
-          background-color: #fb7185;
+          background-color: #a51f3e;
           transition: width 0.25s ease-in;
         }
 
@@ -157,7 +157,7 @@ $xlarge: 1280px;
         }
 
         &[data-step-active="true"] {
-          color: #fb7185;
+          color: #a51f3e;
           font-weight: 600;
 
           .progress {
@@ -173,7 +173,7 @@ $xlarge: 1280px;
         }
 
         &[data-step-completed="true"] {
-          color: #fb7185;
+          color: #a51f3e;
           font-weight: 600;
           .progress {
             width: 100%;
