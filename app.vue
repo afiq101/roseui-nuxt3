@@ -1,4 +1,5 @@
 <script setup>
+import 'vue3-lottie/dist/style.css'
 useHead({
   title: "Biz Amal - Platform Wakaf Terbesar di Malaysia",
   description: "Home page",

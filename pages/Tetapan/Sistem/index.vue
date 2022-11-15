@@ -17,11 +17,11 @@
         <div class="mt-2">
             <div class="grid grid-cols-1">
                 <div v-if="isLoading" class="justify-center items-center content-center">
-                    <p>Sedang diproses...</p>
+                    <Skeleton />
                 </div>
 
                 <div v-if="!isLoading">
-                    <div v-for="conf in config" :key="conf.configurationId" class="rounded rounded-md border border-gray-200 p-4 bg-white flex justify-between items-center mb-2">
+                    <div v-for="conf in config" :key="conf.configurationId" class="rounded border border-gray-200 p-4 bg-white flex justify-between items-center mb-2">
                         <div>   
                             <h4 class="text-md text-gray-700">{{ conf.configurationName }}</h4>
                             <span class="text-sm text-gray-500">{{ conf.configurationCode }}</span>
