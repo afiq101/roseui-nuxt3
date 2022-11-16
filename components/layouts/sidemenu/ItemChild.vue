@@ -36,7 +36,7 @@ function activeMenu(routePath) {
             text-white
             bg-primary-800
             active-menu`
-    : `transition-all	duration-300 hover:ml-4`;
+    : `transition-all	duration-300 text-primary-800 hover:ml-4`;
 }
 
 const indentStyle = computed(() => {
@@ -64,11 +64,12 @@ const indentStyle = computed(() => {
         v-if="
           item.child === undefined || (item.child && item.child.length !== 0)
         "
-        class="flex items-center px-4 py-3 mx-3 rounded-lg cursor-pointer"
+        class="flex items-center px-6 py-3 mx-3 rounded-lg cursor-pointer"
         :to="item.path"
         :class="activeMenu(item.path)"
       >
-        <span class="mx-4 font-normal">{{ item.title }}</span>
+        <Icon v-if="item.icon" name="ci:dot-04-l" size="14"></Icon>
+        <span class="mx-4 font-normal text-xs active:text-white">{{ item.title }}</span>
         <Icon
           v-if="item.child && item.child.length > 0"
           class="ml-auto side-menu-arrow"

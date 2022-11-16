@@ -31,7 +31,23 @@ export default [
       {
         title: "Kredit",
         icon: "ph:wallet",
-        path: "/kredit",
+        child: [
+          {
+            title: "Akaun",
+            icon: "ph:user",
+            path: "/kredit",
+          },
+          {
+            title: "Pengguna",
+            icon: "ph:users-three",
+            path: "/kredit/akaun-kredit-pengguna",
+          },
+          {
+            title: "Institusi",
+            icon: "fluent:organization-24-regular",
+            path: "/kredit/akaun-kredit-institusi",
+          }
+        ]
       },
       {
         title: "Transaksi",
