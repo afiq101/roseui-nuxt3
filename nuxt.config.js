@@ -22,7 +22,11 @@ export default defineNuxtConfig({
         content: "Biz Amal - Platform Wakaf Terbesar di Malaysia",
       },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "stylesheet", href: "https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.min.css"},
+      { href: "https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js" }
+    ],
   },
   pwa: {
     icon: false, // disables the icon module
