@@ -16,7 +16,17 @@ export default [
       {
         title: "Wakaf",
         icon: "ph:handshake",
-        path: "/wakaf",
+        //path: "/wakaf",
+        child: [
+          {
+            title: 'Kategori Wakaf',
+            path: '/wakaf'
+          },
+          {
+            title: 'Tambah Kategori',
+            path: '/wakaf/add'
+          }
+        ]
       },
       {
         title: "Pengguna",
@@ -67,7 +77,46 @@ export default [
       {
         title: "Kempen",
         icon: "mdi:advertisements",
-        path: "/kempen",
+        //path: "/kempen",
+        child: [
+          {
+            title: 'Senarai Kempen',
+            path: '/kempen'
+          },
+          {
+            title: 'Tambah Kempen',
+            path: '/kempen/add'
+          }
+        ]
+      },
+      {
+        title: "Keahlian",
+        icon: "material-symbols:card-membership-outline",
+        //path: "/kempen",
+        child: [
+          {
+            title: 'Senarai Keahlian',
+            path: '/keahlian'
+          },
+          {
+            title: 'Tambah Kempen',
+            path: '/keahlian/add'
+          }
+        ]
+      },
+      {
+        title: "Komisen",
+        icon: "ph:coins-light",
+        child: [
+          {
+            title: 'Senarai Komisen',
+            path: '/komisen'
+          },
+          {
+            title: 'Tambah Komisen',
+            path: '/komisen/add'
+          },
+        ]
       },
       {
         title: "Laporan",

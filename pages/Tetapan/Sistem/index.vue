@@ -23,13 +23,13 @@
                 <div v-if="!isLoading">
                     <div v-for="conf in config" :key="conf.configurationId" class="rounded border border-gray-200 p-4 bg-white flex justify-between items-center mb-2">
                         <div>   
-                            <h4 class="text-md text-gray-700">{{ conf.configurationName }}</h4>
-                            <span class="text-sm text-gray-500">{{ conf.configurationCode }}</span>
+                            <p class="text-sm font-bold text-gray-700">{{ conf.configurationName }}</p>
+                            <span class="text-xs text-gray-500">{{ conf.configurationCode }}</span>
 
                             <div class="mt-2 items-center grid grid-cols-2 gap-2">
                                 <div v-if="conf.configurationData && conf.configurationDataType">
                                     <div v-if="conf.configurationDataType === 'RM'">
-                                        <span class="text-md text-gray-500 font-bold">
+                                        <span class="text-xs text-gray-500 font-bold">
                                             {{ conf.configurationDataType + parseFloat(conf.configurationData).toFixed(2) }}
                                         </span>
                                     </div>
