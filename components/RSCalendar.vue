@@ -6,7 +6,7 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
-});
+}); 
 
 const dateNow = ref(DateTime.now());
 const arrDate = ref([]);
