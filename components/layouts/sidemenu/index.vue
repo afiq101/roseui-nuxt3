@@ -1,5 +1,5 @@
 <script setup>
-import Menu from "~~/components/layouts/sidemenu/Menu.js";
+import Menu from "~~/navigation/index.js";
 import RSItem from "~/components/layouts/sidemenu/Item.vue";
 
 const menuItem = Menu;
