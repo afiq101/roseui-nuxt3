@@ -9,6 +9,7 @@ const data1 = ref([]);
 const data2 = ref([]);
 const data3 = ref([]);
 const data4 = ref([]);
+const changeKey = ref(0);
 var sparkline1Data = [47, 45, 54, 38, 56, 24, 65];
 var sparkline2Data = [61, 35, 66, 41, 59, 25, 32];
 var sparkline3Data = [25, 18, 36, 41, 43, 35, 14];
@@ -221,10 +222,16 @@ const chartOptionsTransaction = computed(() => ({
     },
   },
 }));
+
+onMounted(() => {
+  setTimeout(() => {
+    changeKey.value++;
+  }, 500);
+});
 </script>
 
 <template>
-  <div>
+  <div class="p-4">
     <LayoutsBreadcrumb />
     <!-- First Row -->
     <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-x-6">
@@ -234,10 +241,7 @@ const chartOptionsTransaction = computed(() => ({
           <div
             class="p-5 flex justify-center items-center bg-primary-100 rounded-2xl"
           >
-            <Icon
-              class="text-primary-500"
-              name="ic:outline-attach-money"
-            ></Icon>
+            <Icon class="text-primary-500" name="ic:outline-attach-money"></Icon>
           </div>
           <div class="flex-1 truncate">
             <span class="block font-semibold text-xl leading-tight">
@@ -250,6 +254,7 @@ const chartOptionsTransaction = computed(() => ({
         </div>
         <ClientOnly>
           <VueApexCharts
+            :key="changeKey"
             width="100%"
             height="53"
             :options="{
@@ -284,6 +289,7 @@ const chartOptionsTransaction = computed(() => ({
         </div>
         <ClientOnly>
           <VueApexCharts
+            :key="changeKey"
             width="100%"
             height="53"
             :options="{
@@ -315,6 +321,7 @@ const chartOptionsTransaction = computed(() => ({
         </div>
         <ClientOnly>
           <VueApexCharts
+            :key="changeKey"
             width="100%"
             height="53"
             :options="{
@@ -348,6 +355,7 @@ const chartOptionsTransaction = computed(() => ({
         </div>
         <ClientOnly>
           <VueApexCharts
+            :key="changeKey"
             width="100%"
             height="53"
             :options="{
@@ -372,6 +380,7 @@ const chartOptionsTransaction = computed(() => ({
           <template #body>
             <ClientOnly>
               <VueApexCharts
+                :key="changeKey"
                 width="100%"
                 height="300"
                 name="area"
@@ -426,6 +435,7 @@ const chartOptionsTransaction = computed(() => ({
           <template #body>
             <ClientOnly>
               <VueApexCharts
+                :key="changeKey"
                 width="100%"
                 height="300"
                 name="radialBar"
