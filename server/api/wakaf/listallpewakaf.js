@@ -8,14 +8,16 @@ export default defineEventHandler(async (event) => {
     let body            = null;
 
     let search_string   = null;
+    let wakaf_code      = null;
 
     try {
 
         let params = await readBody(event);
 
-        search_string = params.search ? params.search : '';
+        search_string   = params.search ? params.search : '';
+        wakaf_code      = params.wakaf_code ? params.wakaf_code : '';
 
-        let fetch_data = await ListAllPewakaf();
+        let fetch_data = await ListAllPewakaf(wakaf_code);
         console.log('Log Data ListAllPewakaf() : ', fetch_data);
 
         if(fetch_data.status) {

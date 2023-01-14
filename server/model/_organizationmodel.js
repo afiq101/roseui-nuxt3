@@ -1,4 +1,5 @@
 const db = require('../connection');
+const db2 = require('../connection2');
 
 async function GetOrganizationList(organizationName, organizationEmail, organizationStatus) {
 
@@ -66,6 +67,46 @@ async function GetOrganizationList(organizationName, organizationEmail, organiza
     return result
 }
 
+async function VerifyOrganizationById(organizationId) {
+
+    let result = null;
+
+    try {
+
+        let sql = `
+        SELECT 
+        ins.Institusi_ID, 
+        Institusi_Name,
+        Org_Wallet_ID
+        FROM INSTITUSI ins INNER JOIN CREDIT_ACCOUNT_INSTITUSI cai
+        ON ins.Institusi_ID = cai.Institusi_ID
+        WHERE ins.Institusi_ID = ? AND Institusi_Status = 1`;
+        let query = await db2.query2(sql, [organizationId]);
+
+        if(query.length > 0) {
+            result = {
+                status: true,
+                data: query[0]
+            }
+        } else {
+            result = {
+                status: false,
+                data: []
+            }
+        }
+
+    } catch(e) {
+        console.log("Syntax Error at /model/oragnizationmodel/VerifyOrganizationById : ", e);
+        result = {
+            status: false,
+            data: []
+        }
+    }
+
+    return result;
+}
+
 module.exports = {
-    GetOrganizationList
+    GetOrganizationList,
+    VerifyOrganizationById
 }

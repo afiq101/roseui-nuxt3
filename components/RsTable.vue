@@ -47,6 +47,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  pageSize: {
+    type: Number,
+    default: 10,
+  },
 });
 
 // Default varaiable
@@ -59,7 +63,7 @@ const dataLength = ref(props.data.length);
 const currentSort = ref(0);
 const currentSortDir = ref("asc");
 const currentPage = ref(1);
-const pageSize = ref(5);
+const pageSize = ref(props.pageSize);
 const maxPageShown = ref(3);
 
 // Searching Variable
@@ -170,10 +174,14 @@ const computedData = computed(() => {
       if (keyword.value === "") return true;
       let result = false;
       Object.entries(row).forEach(([key, value]) => {
-        if (
-          value.toString().toLowerCase().includes(keyword.value.toLowerCase())
-        ) {
-          result = true;
+        try {
+          if (
+            value.toString().toLowerCase().includes(keyword.value.toLowerCase())
+          ) {
+            result = true;
+          }
+        } catch (error) {
+          result = false;
         }
       });
       return result;
@@ -353,10 +361,16 @@ watch(
       class="table-header"
       :class="{
         open: openFilter,
+        '!max-h-full': !optionsAdvanced.filterable,
       }"
       v-if="advanced"
     >
-      <div class="table-header-filter">
+      <div
+        class="table-header-filter"
+        :class="{
+          '!items-center !gap-0': !optionsAdvanced.filterable,
+        }"
+      >
         <div>
           <div class="flex gap-x-2">
             <FormKit
@@ -366,6 +380,7 @@ watch(
               outer-class="mb-0"
             />
             <rs-button
+              v-if="optionsAdvanced.filterable"
               class="!px-3 sm:!px-6 bg-primary-800"
               @click="openFilter ? (openFilter = false) : (openFilter = true)"
             >
@@ -394,7 +409,10 @@ watch(
           ></v-select> -->
         </div>
       </div>
-      <div class="flex flex-wrap items-center justify-start gap-x-3">
+      <div
+        class="flex flex-wrap items-center justify-start gap-x-3"
+        v-if="optionsAdvanced.filterable"
+      >
         <rs-dropdown
           :title="camelCasetoTitle(val)"
           size="sm"
@@ -419,14 +437,14 @@ watch(
     >
       <div class="flex flex-wrap items-center justify-start gap-x-2">
         <div
-          class="flex items-center justify-center gap-x-2 border border-primary-800 text-primary-800 rounded-lg py-1 px-2"
+          class="flex items-center justify-center gap-x-2 border border-primary-400 text-primary-400 rounded-lg py-1 px-2"
           v-for="(val, index) in filterComputed"
           :key="index"
         >
           {{ val ? camelCasetoTitle(val.title) : "" }}
           <Icon
             name="ic:round-close"
-            class="mr-0 md:mr-1 hover:text-red-800 cursor-pointer"
+            class="mr-0 md:mr-1 hover:text-red-500 cursor-pointer"
             size="1rem"
             @click="hideColumn(val.title)"
           ></Icon>
@@ -450,7 +468,7 @@ watch(
               'border-y': !options.borderless,
               'border-gray-200 bg-gray-100 dark:bg-gray-800':
                 options.variant === 'default',
-              'border-primary-200 bg-primary-800 text-white ':
+              'border-primary-200 bg-primary-400 text-white ':
                 options.variant === 'primary',
               'border-gray-200 bg-secondary text-white':
                 options.variant === 'secondary',
@@ -471,12 +489,12 @@ watch(
                   'border-r last:border-l last:border-r-0':
                     options.bordered && !options.borderless,
                   'border-gray-300': options.variant === 'default',
-                  'border-primary-800': options.variant === 'primary',
+                  'border-primary-300': options.variant === 'primary',
                   'border-gray-300': options.variant === 'secondary',
                   'border-blue-300': options.variant === 'info',
                   'border-green-300': options.variant === 'success',
                   'border-orange-300': options.variant === 'warning',
-                  'border-red-800': options.variant === 'danger',
+                  'border-red-300': options.variant === 'danger',
                   'w-36': options.fixed,
                   'cursor-pointer': optionsAdvanced.sortable && advanced,
                 }"
@@ -495,19 +513,19 @@ watch(
                   <Icon
                     class="absolute top-3 right-2 opacity-20"
                     size="1.25rem"
-                    name="mdi:sort-alphabetical-variant"
+                    name="carbon:chevron-sort"
                   />
                   <Icon
                     v-if="currentSort == index && currentSortDir == 'asc'"
                     class="absolute top-3 right-2 opacity-50"
                     size="1.25rem"
-                    name="mdi:sort-alphabetical-ascending-variant"
+                    name="carbon:chevron-sort-up"
                   />
                   <Icon
                     v-else-if="currentSort == index && currentSortDir == 'desc'"
                     class="absolute top-3 right-2 opacity-50"
                     size="1.25rem"
-                    name="mdi:sort-alphabetical-descending-variant"
+                    name="carbon:chevron-sort-down"
                   />
                 </div>
               </th>
@@ -568,7 +586,13 @@ watch(
                 v-for="(val2, index2) in columnTitle"
                 :key="index2"
               >
-                {{ filteredDatabyTitle(val1, val2) }}
+                <slot
+                  :name="val2"
+                  :text="filteredDatabyTitle(val1, val2)"
+                  :value="val1"
+                >
+                  {{ filteredDatabyTitle(val1, val2) }}
+                </slot>
               </td>
             </tr>
           </tbody>
@@ -623,7 +647,7 @@ watch(
       <div class="table-footer-page">
         <rs-button
           variant="primary-outline"
-          class="rounded-full !p-1 w-8 h-8 text-primary-800 bg-primary-800"
+          class="rounded-full !p-1 w-8 h-8"
           @click="firstPage"
           :disabled="currentPage == 1"
         >
@@ -631,7 +655,7 @@ watch(
         </rs-button>
         <rs-button
           variant="primary-outline"
-          class="rounded-full !p-1 w-8 h-8 text-red-800 bg-primary-800"
+          class="rounded-full !p-1 w-8 h-8"
           @click="prevPage"
           :disabled="currentPage == 1"
         >
@@ -639,7 +663,7 @@ watch(
         </rs-button>
         <rs-button
           :variant="currentPage == val ? 'primary' : 'primary-outline'"
-          class="rounded-full !p-1 w-8 h-8 bg-primary-800 text-white"
+          class="rounded-full !p-1 w-8 h-8"
           v-for="(val, index) in pages"
           :key="index"
           @click="pageChange(val)"
@@ -648,7 +672,7 @@ watch(
         </rs-button>
         <rs-button
           variant="primary-outline"
-          class="rounded-full !p-1 w-8 h-8 bg-primary-800 text-white"
+          class="rounded-full !p-1 w-8 h-8"
           @click="nextPage"
           :disabled="currentPage == totalPage"
         >
@@ -656,7 +680,7 @@ watch(
         </rs-button>
         <rs-button
           variant="primary-outline"
-          class="rounded-full !p-1 w-8 h-8 bg-primary-800 text-white"
+          class="rounded-full !p-1 w-8 h-8"
           @click="lastPage"
           :disabled="currentPage == totalPage"
         >

@@ -23,20 +23,15 @@ async function ListWakafConfiguration(wakaf_name, wakaf_code, wakaf_status) {
         };
 
         let sql = `
-        SELECT
+        SELECT 
         wakaf_configurationId,
-        wakaf_configurationName,
-        wakaf_configurationDescription,
-        wakaf_configurationCode,
-        wakaf_configurationMinAmount,
-        wakaf_configurationMaxAmount,
-        wakaf_configurationDetail,
-        wakaf_configurationImage,
-        wakaf_configurationCreatedDate,
-        wakaf_configurationLastModified,
-        wakaf_configurationStatus
-        FROM wakafConfiguration
-        WHERE wakaf_configurationId IS NOT NULL
+        wakaf_configurationName as AHLI, 
+        wakaf_configurationCode as KOD_AHLI, 
+        IF(SUM(wakaf_member_current_amount) IS NULL, 0, SUM(wakaf_member_current_amount)) as TOTAL_SUM_WAKAF,
+        IF(COUNT(wakaf_member_id) = 0, 0, COUNT(*)) as TOTAL_AHLI_WAKAF
+        FROM wakafConfiguration wc 
+        LEFT OUTER JOIN wakafMembership wm ON wc.wakaf_configurationId = wm.wakaf_member_level
+        GROUP BY wakaf_configurationName
         ${where_wakaf_name}
         ${where_wakaf_code}
         ${where_wakaf_status}`;
@@ -68,11 +63,17 @@ async function ListWakafConfiguration(wakaf_name, wakaf_code, wakaf_status) {
     return result;
 }
 
-async function ListAllPewakaf() {
+async function ListAllPewakaf(wakaf_code) {
 
     let result = null;
 
     try {
+
+
+        let where_wakaf_code = ``;
+        if(wakaf_code) {
+            where_wakaf_code = `WHERE wakaf_configurationCode = '${wakaf_code}'`
+        }
 
         let sql = `
         SELECT 
@@ -93,6 +94,8 @@ async function ListAllPewakaf() {
         FROM wakafMembership wm
         INNER JOIN userAccount a ON wm.wakaf_member_userId = a.accountId
         INNER JOIN wakafConfiguration wc ON wc.wakaf_configurationId = wm.wakaf_member_level
+        ${where_wakaf_code}
+        ORDER BY wakaf_member_current_amount DESC
         LIMIT 100`;
 
         let query = await db.query(sql);
@@ -130,10 +133,9 @@ async function GetUserTransactionWakaf(userid) {
 
         let sql = `
         SELECT 
-        billpaymentId,
         billpaymentBillCode as 'Kod Bil',
         CONCAT('RM', FORMAT(billpaymentAmount, 2)) as 'Jumlah Wakaf',
-        billpaymentInvoiceNo as 'Jumlah Wakaf',
+        billpaymentInvoiceNo as 'No. Rujukan',
         billpaymentTPNumber as 'No. Rujukan toyyibPay',
         billpaymentFPXTransactionId as 'No. Rujukan FPX',
         billpaymentTransactionType as 'Jenis Bayaran',

@@ -26,19 +26,19 @@ onMounted(() => {
   >
     <div class="py-2 px-4">
       <div class="flex flex-auto gap-3 justify-center items-center">
-        <!-- <img
-          class="h-10 w-10 block dark:hidden"
-          src="@/assets/img/logo/logo.png"
+        <img
+          class="h-20 w-20 block dark:hidden"
+          src="@/assets/img/playstore.png"
           alt=""
         />
         <img
-          class="h-10 w-10 hidden dark:block"
-          src="@/assets/img/logo/logo-white.png"
+          class="h-20 w-20 hidden dark:block"
+          src="@/assets/img/playstore.png"
           alt=""
-        /> -->
-        <span class="text-xl font-semibold text-primary-800 dark:text-white"
+        />
+        <!-- <span class="text-xl font-semibold text-primary-800 dark:text-white"
           >Biz Amal</span
-        >
+        > -->
       </div>
     </div>
     <div class="flex flex-col justify-between my-6">

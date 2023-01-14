@@ -62,6 +62,96 @@ async function ListUser(user_name, user_email, user_phone, user_secret_key, user
     return result;
 }
 
+async function GetUserConfigurationWakaf(user_id, wakaf_code) {
+
+    let result = null;
+
+    try {
+
+        let sql     = `
+        SELECT 
+        accountUserFullname,
+        accountUserName,
+        wakaf_member_code,
+        wakaf_member_type,
+        wakaf_member_level,
+        DATE_FORMAT(wakaf_member_created_date, '%d-%m-%Y %r') as wakaf_member_created_date,
+        wakaf_member_current_amount,
+        wakaf_member_status,
+        wakaf_member_recurring,
+        wakaf_member_recurring_amount
+        FROM wakafMembership wm
+        INNER JOIN userAccount a ON wm.wakaf_member_userId = a.accountId
+        WHERE wakaf_member_userId LIKE ? AND wakaf_member_code LIKE ?`;
+        let query   = await db.query(sql, [user_id, wakaf_code]);
+        
+        if(query) {
+            result = {
+                status: true,
+                data: query
+            }
+        } else {
+            result = {
+                status: false,
+                data: []
+            }
+        }
+
+    } catch(e) {
+        console.log("Syntax Error at model GetUserConfigurationWakaf() : ", e);
+        result = {
+            status: false,
+            data: []
+        }
+    }
+
+    return result;
+
+}
+
+async function UpdateUserWakafConfiguration(field, data, user_id, wakaf_code) {
+
+    let result = null;
+
+    try {
+
+        let update_clause = `${field} = ${data}`;
+        let sql = `
+        UPDATE wakafMembership SET
+        ${update_clause}
+        WHERE 
+        wakaf_member_userId LIKE ?
+        AND wakaf_member_code LIKE ?`;
+
+        let query = await db.query(sql, [user_id, wakaf_code]);
+
+        console.log("LOG QUERY UPDATE : ", query);
+
+        if(query) {
+            result = {
+                status: true,
+                data: []
+            }
+        } else {
+            result = {
+                status: false,
+                data: []
+            }
+        }
+
+    } catch(e) {
+        console.log("Syntax Error at Model UpdateUserWakafConfiguration() : ", e);
+        result = {
+            status: false,
+            data: []
+        }
+    }
+
+    return result;
+}
+
 module.exports = {
-    ListUser
+    ListUser,
+    GetUserConfigurationWakaf,
+    UpdateUserWakafConfiguration
 }

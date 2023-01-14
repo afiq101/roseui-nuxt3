@@ -28,6 +28,11 @@ export default defineNuxtConfig({
       { href: "https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js" }
     ],
   },
+  nitro: {
+    plugins: [
+      '~/server/plugins/cors'
+    ]
+  },
   pwa: {
     icon: false, // disables the icon module
     manifest: {

@@ -15,7 +15,7 @@ module.exports = {
         "2xl": "1536px",
       },
       colors: ({ colors }) => ({
-        primary: colors.red,
+        primary: colors.purple,
         secondary: colors.gray,
         success: colors.green[400],
         info: colors.blue[400],
@@ -31,7 +31,7 @@ module.exports = {
         zinc: colors.zinc,
         neutral: colors.neutral,
         stone: colors.stone,
-        red: colors.red,
+        red: colors.purple,
         orange: colors.orange,
         amber: colors.amber,
         yellow: colors.yellow,
@@ -47,7 +47,7 @@ module.exports = {
         purple: colors.purple,
         fuchsia: colors.fuchsia,
         pink: colors.pink,
-        rose: colors.red,
+        rose: colors.purple,
       }),
       columns: {
         auto: "auto",

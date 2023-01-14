@@ -6,7 +6,7 @@ async function query(sql, params) {
     const connection = await mysql.createPool(config.db);
     const [results, ] = await connection.execute(sql, params);
 
-    await connection.execute('CALL kill_all_sleep_connections()');
+    //await connection.execute('CALL kill_all_sleep_connections()');
     connection.end();
 
     return results;

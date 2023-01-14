@@ -45,22 +45,23 @@
                 </p>
                 <ul v-if="isLoading === false" class="mt-6">
                     <li 
-                    :class="getBackgroundColor(list.wakaf_configurationName)"
+                    :class="getBackgroundColor(list.AHLI)"
                     class="text-white border border-gray-200 mb-1 rounded-md shadow-sm"
                     v-for="list in list_wakaf_category" v-bind:key="list.wakaf_configurationId">
+                    <NuxtLink :to="`/wakaf/kategori/${list.KOD_AHLI}`">
                         <div class="p-2 md:p-3">
                             <div class="flex justify-between items-center">
                                 <div class="">
                                     <div>
                                         <p class="text-md font-semibold">
-                                            {{ list.wakaf_configurationName }}
+                                            {{ list.AHLI }}
                                         </p>
                                         <span class="text-xs">
-                                            ({{ list.wakaf_configurationCode }})
+                                            ({{ list.KOD_AHLI }})
                                         </span>
                                     </div>
                                     <div class="hidden md:block">
-                                        <p class="text-xs font-semibold" v-if="list.wakaf_configurationMaxAmount">
+                                        <!-- <p class="text-xs font-semibold" v-if="list.wakaf_configurationMaxAmount">
                                             <span>
                                                • {{ currencyFormatter().format(list.wakaf_configurationMinAmount) }} - {{ currencyFormatter().format(list.wakaf_configurationMaxAmount) }}
                                             </span>
@@ -69,19 +70,25 @@
                                             <span>
                                                • {{ currencyFormatter().format(list.wakaf_configurationMinAmount) }} dan ke atas.
                                             </span>
+                                        </p> -->
+                                        <p class="text-xs font-semibold">
+                                            <span>
+                                               • Jumlah Kutipan : RM {{ parseFloat(list.TOTAL_SUM_WAKAF).toFixed(2) }}
+                                            </span>
                                         </p>
                                     </div>
                                 </div>
                                 <div class="flex">
                                     <div class="mr-2 md:mr-4">
                                         <p>
-                                            (0) Ahli
+                                            ({{list.TOTAL_AHLI_WAKAF}}) Ahli
                                         </p>
                                     </div>
                                     <Icon name="material-symbols:arrow-forward-ios" size="16" />
                                 </div>
                             </div>
                         </div>
+                    </NuxtLink>
                     </li>
                 </ul>
             </rs-card>
@@ -95,12 +102,13 @@
                 </p>
                 <div class="mt-4">
                     
-                    <div v-for="data in list_all_wakaf" v-bind:key="data.accountUsername">
+                    <div v-for="data in list_all_wakaf" v-bind:key="data.accountUsername" class="mb-2">
                         <NuxtLink  
                             :to="{ 
                                 path: `/wakaf/detail/${new Date().getTime()}`, 
                                 query: { 
-                                    userId: data.wakaf_member_userId 
+                                    userId: data.wakaf_member_userId,
+                                    wakaf_code: data.wakaf_member_code
                                     }
                                 }"
                         >
@@ -118,7 +126,7 @@
                                 </div>
                             </div>
                             <div class="items-center">
-                                <span>{{ data.wakaf_member_userId }}</span>
+                                <!-- <span>{{ data.wakaf_member_userId }}</span> -->
                                 <Icon name="material-symbols:arrow-forward-ios" size="16" />
                             </div>
                         </div>

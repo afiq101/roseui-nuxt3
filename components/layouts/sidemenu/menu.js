@@ -112,10 +112,10 @@ export default [
             title: 'Senarai Komisen',
             path: '/komisen'
           },
-          {
-            title: 'Tambah Komisen',
-            path: '/komisen/add'
-          },
+          // {
+          //   title: 'Tambah Komisen',
+          //   path: '/komisen/add'
+          // },
         ]
       },
       {
@@ -129,6 +129,11 @@ export default [
     header: "Tetapan",
     description: "Aplikasi & Sistem",
     child: [
+      {
+        title: "Auto Wakaf",
+        icon: "fluent-mdl2:recurring-event",
+        path: "/recurring",
+      },
       {
         title: "Aplikasi",
         icon: "ph:device-mobile",
