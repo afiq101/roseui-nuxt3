@@ -58,20 +58,7 @@ const showCode3 = ref(false);
                   &lt;rs-collapse-item title="Collapse Item 2"&gt;Collapse Item 2 content&lt;/rs-collapse-item&gt;
                 &lt;/rs-collapse&gt;
 
-              &lt;script&gt; 
-                import RsCollapse from "@/components/Collapse.vue";
-                import RsCollapseItem from "@/components/CollapseItem.vue";
-
-                export default {
-                  components: {
-                    RsCollapse,
-                    RsCollapseItem,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>
@@ -128,20 +115,7 @@ const showCode3 = ref(false);
                   &lt;rs-collapse-item title="Collapse Item 2"&gt;Collapse Item 2 content&lt;/rs-collapse-item&gt;
                 &lt;/rs-collapse&gt;
 
-              &lt;script&gt; 
-                import RsCollapse from "@/components/Collapse.vue";
-                import RsCollapseItem from "@/components/CollapseItem.vue";
-
-                export default {
-                  components: {
-                    RsCollapse,
-                    RsCollapseItem,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>
@@ -226,20 +200,7 @@ const showCode3 = ref(false);
                 &lt;/rs-collapse&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import RsCollapse from "@/components/Collapse.vue";
-                import RsCollapseItem from "@/components/CollapseItem.vue";
-
-                export default {
-                  components: {
-                    RsCollapse,
-                    RsCollapseItem,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>

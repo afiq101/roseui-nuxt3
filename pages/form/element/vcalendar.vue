@@ -1,14 +1,22 @@
 <script setup>
-import { DatePicker as VDatePicker } from "v-calendar";
 import { DateTime } from "luxon";
 definePageMeta({
   title: "VCalendar",
 });
 
-const date = ref(DateTime.now());
-const range = ref({
-  start: DateTime.local(2022, 6, 6),
-  end: DateTime.local(2022, 6, 20),
+const showCode1 = ref(false);
+const showCode2 = ref(false);
+const showCode3 = ref(false);
+
+const date = ref();
+const range = ref();
+
+onMounted(() => {
+  date.value = DateTime.now();
+  range.value = {
+    start: DateTime.local(2022, 6, 6),
+    end: DateTime.local(2022, 6, 20),
+  };
 });
 </script>
 
@@ -51,6 +59,41 @@ const range = ref({
             {{ date }}
           </p>
         </div>
+        <div class="flex justify-end">
+          <button
+            class="text-sm border border-slate-200 py-1 px-3 rounded-lg"
+            @click="showCode1 ? (showCode1 = false) : (showCode1 = true)"
+          >
+            Show Code
+          </button>
+        </div>
+        <ClientOnly>
+          <transition name="fade">
+            <div class="z-0" v-show="showCode1" v-highlight>
+              <SimpleBar style="height: 400px">
+                <pre class="language-html shadow-none">
+            <code>
+              &lt;template&gt;
+                &lt;div class="flex flex-col justify-center items-center"&gt;
+                  &lt;v-date-picker v-model="date" /&gt;
+                &lt;/div&gt;
+              &lt;/template&gt;
+    
+              &lt;script setup&gt;
+                import { DateTime } from "luxon";
+    
+                const date = ref();
+    
+                onMounted(() => {
+                  date.value = DateTime.now();
+                });
+              &lt;/script&gt;
+            </code>
+          </pre>
+              </SimpleBar>
+            </div>
+          </transition>
+        </ClientOnly>
       </template>
     </rs-card>
     <rs-card>
@@ -69,6 +112,44 @@ const range = ref({
             {{ range }}
           </p>
         </div>
+        <div class="flex justify-end">
+          <button
+            class="text-sm border border-slate-200 py-1 px-3 rounded-lg"
+            @click="showCode2 ? (showCode2 = false) : (showCode2 = true)"
+          >
+            Show Code
+          </button>
+        </div>
+        <ClientOnly>
+          <transition name="fade">
+            <div class="z-0" v-show="showCode2" v-highlight>
+              <SimpleBar style="height: 400px">
+                <pre class="language-html shadow-none">
+            <code>
+              &lt;template&gt;
+                &lt;div class="flex flex-col justify-center items-center"&gt;
+                  &lt;v-date-picker v-model="range" is-range /&gt;
+                &lt;/div&gt;
+              &lt;/template&gt;
+    
+              &lt;script setup&gt;
+                import { DateTime } from "luxon";
+    
+                const range = ref();
+    
+                onMounted(() => {
+                  range.value = {
+                    start: DateTime.local(2022, 6, 6),
+                    end: DateTime.local(2022, 6, 20),
+                  };
+                });
+              &lt;/script&gt;
+            </code>
+          </pre>
+              </SimpleBar>
+            </div>
+          </transition>
+        </ClientOnly>
       </template>
     </rs-card>
     <rs-card>
@@ -87,6 +168,41 @@ const range = ref({
             {{ date }}
           </p>
         </div>
+        <div class="flex justify-end">
+          <button
+            class="text-sm border border-slate-200 py-1 px-3 rounded-lg"
+            @click="showCode3 ? (showCode3 = false) : (showCode3 = true)"
+          >
+            Show Code
+          </button>
+        </div>
+        <ClientOnly>
+          <transition name="fade">
+            <div class="z-0" v-show="showCode3" v-highlight>
+              <SimpleBar style="height: 400px">
+                <pre class="language-html shadow-none">
+            <code>
+              &lt;template&gt;
+                &lt;div class="flex flex-col justify-center items-center"&gt;
+                  &lt;v-date-picker v-model="date" mode="dateTime" /&gt;
+                &lt;/div&gt;
+              &lt;/template&gt;
+    
+              &lt;script setup&gt;
+                import { DateTime } from "luxon";
+    
+                const date = ref();
+    
+                onMounted(() => {
+                  date.value = DateTime.now();
+                });
+              &lt;/script&gt;
+            </code>
+          </pre>
+              </SimpleBar>
+            </div>
+          </transition>
+        </ClientOnly>
       </template>
     </rs-card>
   </div>

@@ -36,18 +36,7 @@ const showCode4 = ref(false);
                 &lt;rs-button&gt;Button&lt;/rs-button&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import RsButton from "@/components/Button.vue";
-
-                export default {
-                  components: {
-                    RsButton,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>
@@ -97,18 +86,7 @@ const showCode4 = ref(false);
                 &lt;rs-button variant="danger"&gt;Danger&lt;/rs-button&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import RsButton from "@/components/Button.vue";
-
-                export default {
-                  components: {
-                    RsButton,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>
@@ -215,18 +193,7 @@ const showCode4 = ref(false);
                 &lt;rs-button variant="danger-text"&gt;Danger&lt;/rs-button&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import RsButton from "@/components/Button.vue";
-
-                export default {
-                  components: {
-                    RsButton,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>
@@ -253,33 +220,24 @@ const showCode4 = ref(false);
         <div class="flex justify-end">
           <button
             class="text-sm border border-slate-200 py-1 px-3 rounded-lg my-2"
-            @click="showCode1 ? (showCode1 = false) : (showCode1 = true)"
+            @click="showCode4 ? (showCode4 = false) : (showCode4 = true)"
           >
             Show Code
           </button>
         </div>
         <ClientOnly>
           <transition name="fade">
-            <div v-show="showCode1" v-highlight>
+            <div v-show="showCode4" v-highlight>
               <SimpleBar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
-                &lt;rs-button&gt;Button&lt;/rs-button&gt;
+                &lt;rs-button size="sm"&gt;Small&lt;/rs-button&gt;
+                &lt;rs-button size="md"&gt;Medium&lt;/rs-button&gt;
+                &lt;rs-button size="lg"&gt;Large&lt;/rs-button&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import RsButton from "@/components/Button.vue";
-
-                export default {
-                  components: {
-                    RsButton,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>

@@ -3,6 +3,8 @@ definePageMeta({
   title: "Input Group",
 });
 
+const showCode1 = ref(false);
+const showCode2 = ref(false);
 const key = ref("jg9dsk23rnfsd");
 
 const generateKey = () => {
@@ -57,6 +59,72 @@ const computedKey = computed(() => {
             </button>
           </template>
         </FormKit>
+        <div class="flex justify-end">
+          <button
+            class="text-sm border border-slate-200 py-1 px-3 rounded-lg"
+            @click="showCode1 ? (showCode1 = false) : (showCode1 = true)"
+          >
+            Show Code
+          </button>
+        </div>
+        <ClientOnly>
+          <transition name="fade">
+            <div class="z-0" v-show="showCode1" v-highlight>
+              <SimpleBar style="height: 400px">
+                <pre class="language-html shadow-none">
+            <code>
+              &lt;template&gt;
+                &lt;!-- Prefix with button text --&gt;
+                &lt;FormKit type="text" label="Text" placeholder="1.00"&gt;
+                  &lt;template #prefix&gt; &lt;div class="p-3"&gt;RM&lt;/div&gt; &lt;/template&gt;
+                &lt;/FormKit&gt;
+
+                &lt;!-- Prefix with button text --&gt;
+                &lt;FormKit type="text" placeholder="1.00"&gt;
+                  &lt;template #prefix&gt;
+                    &lt;div class="bg-slate-100 dark:bg-slate-700 h-full rounded-l-md p-3"&gt;
+                      RM
+                    &lt;/div&gt;
+                  &lt;/template&gt;
+                &lt;/FormKit&gt;
+
+                &lt;!-- Prefix Icon --&gt;
+                &lt;FormKit type="text" label="Icon" placeholder="Icon"&gt;
+                  &lt;template #prefix&gt;
+                    &lt;Icon class="px-2" name="ic:outline-info"&gt;&lt;/Icon&gt;
+                  &lt;/template&gt;
+                &lt;/FormKit&gt;
+
+                &lt;!-- Prefix with button text --&gt;
+                &lt;FormKit type="text" label="Button" v-model="computedKey" placeholder="Button"&gt;
+                  &lt;template #prefix&gt;
+                    &lt;button
+                      class="bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 hover:dark:bg-slate-900 h-full rounded-l-md p-3 flex justify-center items-center"
+                      @click="generateKey"
+                    &gt;
+                      &lt;Icon name="ic:round-refresh" size="19"&gt;&lt;/Icon&gt;
+                    &lt;/button&gt;
+                  &lt;/template&gt;
+                &lt;/FormKit&gt;
+              &lt;/template&gt;
+
+              &lt;script setup&gt;
+              const key = ref("jg9dsk23rnfsd");
+
+              const generateKey = () => {
+                key.value = Math.random().toString(36).substring(2, 15);
+              };
+
+              const computedKey = computed(() => {
+                return key.value;
+              });
+              &lt;/script&gt;
+            </code>
+          </pre>
+              </SimpleBar>
+            </div>
+          </transition>
+        </ClientOnly>
       </template>
     </rs-card>
 
@@ -100,6 +168,72 @@ const computedKey = computed(() => {
             </button>
           </template>
         </FormKit>
+        <div class="flex justify-end">
+          <button
+            class="text-sm border border-slate-200 py-1 px-3 rounded-lg"
+            @click="showCode2 ? (showCode2 = false) : (showCode2 = true)"
+          >
+            Show Code
+          </button>
+        </div>
+        <ClientOnly>
+          <transition name="fade">
+            <div class="z-0" v-show="showCode2" v-highlight>
+              <SimpleBar style="height: 400px">
+                <pre class="language-html shadow-none">
+            <code>
+              &lt;template&gt;
+                &lt;!-- Suffix with button text --&gt;
+                &lt;FormKit type="text" label="Text" placeholder="1.00"&gt;
+                  &lt;template #suffix&gt; &lt;div class="p-3"&gt;RM&lt;/div&gt; &lt;/template&gt;
+                &lt;/FormKit&gt;
+
+                &lt;!-- Suffix with button text --&gt;
+                &lt;FormKit type="text" placeholder="1.00"&gt;
+                  &lt;template #suffix&gt;
+                    &lt;div class="bg-slate-100 dark:bg-slate-700 h-full rounded-r-md p-3"&gt;
+                      RM
+                    &lt;/div&gt;
+                  &lt;/template&gt;
+                &lt;/FormKit&gt;
+
+                &lt;!-- Suffix Icon --&gt;
+                &lt;FormKit type="text" label="Icon" placeholder="Icon"&gt;
+                  &lt;template #suffix&gt;
+                    &lt;Icon class="px-2" name="ic:outline-info"&gt;&lt;/Icon&gt;
+                  &lt;/template&gt;
+                &lt;/FormKit&gt;
+
+                &lt;!-- Suffix with button text --&gt;
+                &lt;FormKit type="text" label="Button" v-model="computedKey" placeholder="Button"&gt;
+                  &lt;template #suffix&gt;
+                    &lt;button
+                      class="bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 hover:dark:bg-slate-900 h-full rounded-r-md p-3 flex justify-center items-center"
+                      @click="generateKey"
+                    &gt;
+                      &lt;Icon name="ic:round-refresh" size="19"&gt;&lt;/Icon&gt;
+                    &lt;/button&gt;
+                  &lt;/template&gt;
+                &lt;/FormKit&gt;
+              &lt;/template&gt;
+
+              &lt;script setup&gt;
+              const key = ref("jg9dsk23rnfsd");
+
+              const generateKey = () => {
+                key.value = Math.random().toString(36).substring(2, 15);
+              };
+
+              const computedKey = computed(() => {
+                return key.value;
+              });
+              &lt;/script&gt;
+            </code>
+          </pre>
+              </SimpleBar>
+            </div>
+          </transition>
+        </ClientOnly>
       </template>
     </rs-card>
   </div>

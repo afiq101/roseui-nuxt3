@@ -61,20 +61,7 @@ const variantOptions = [
                 &lt;/rs-tab&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import RsTab from "@/components/Tab.vue";
-                import RsTabItem from "@/components/TabItem.vue";
-
-                export default {
-                  components: {
-                    RsTab,
-                    RsTabItem,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>
@@ -117,20 +104,7 @@ const variantOptions = [
                 &lt;/rs-tab&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import RsTab from "@/components/Tab.vue";
-                import RsTabItem from "@/components/TabItem.vue";
-
-                export default {
-                  components: {
-                    RsTab,
-                    RsTabItem,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>
@@ -254,20 +228,7 @@ const variantOptions = [
                 &lt;/rs-tab&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import RsTab from "@/components/Tab.vue";
-                import RsTabItem from "@/components/TabItem.vue";
-
-                export default {
-                  components: {
-                    RsTab,
-                    RsTabItem,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>

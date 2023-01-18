@@ -86,25 +86,9 @@ const clickCancel = () => {
                 &lt;/rs-modal&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import { ref } from "vue";
-                import RsButton from "@/components/Button.vue";
-                import RsModal from "@/components/Modal.vue";
-
-                export default {
-                  components: {
-                    RsButton,
-                    RsModal,
-                  },
-                  setup() {
-                    const showModal = ref(false);
-                    const showModalHideOverlay = ref(false);
-                    return {
-                      showModal,
-                      showModalHideOverlay,
-                    };
-                  },
-                };
+              &lt;script setup&gt;
+              const showModal = ref(false);
+              const showModalHideOverlay = ref(false); 
               &lt;/script&gt;
             </code>
           </pre>
@@ -170,27 +154,10 @@ const clickCancel = () => {
                 &lt;/rs-modal&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import { ref } from "vue";
-                import RsButton from "@/components/Button.vue";
-                import RsModal from "@/components/Modal.vue";
-
-                export default {
-                  components: {
-                    RsButton,
-                    RsModal,
-                  },
-                  setup() {
-                    const showModalSmall = ref(false);
-                    const showModalMedium = ref(false);
-                    const showModaLarge = ref(false);
-                    return {
-                      showModalSmall,
-                      showModalMedium,
-                      showModaLarge,
-                    };
-                  },
-                };
+              &lt;script setup&gt; 
+              const showModalSmall = ref(false);
+              const showModalMedium = ref(false);
+              const showModaLarge = ref(false);
               &lt;/script&gt;
             </code>
           </pre>
@@ -269,27 +236,10 @@ const clickCancel = () => {
                 &lt;/rs-modal&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import { ref } from "vue";
-                import RsButton from "@/components/Button.vue";
-                import RsModal from "@/components/Modal.vue";
-
-                export default {
-                  components: {
-                    RsButton,
-                    RsModal,
-                  },
-                  setup() {
-                    const showModalTop = ref(false);
-                    const showModalCenter = ref(false);
-                    const showModalBottom = ref(false);
-                    return {
-                      showModalTop,
-                      showModalCenter,
-                      showModalBottom,
-                    };
-                  },
-                };
+              &lt;script setup&gt; 
+              const showModalTop = ref(false);
+              const showModalCenter = ref(false);
+              const showModalBottom = ref(false);
               &lt;/script&gt;
             </code>
           </pre>
@@ -382,29 +332,11 @@ const clickCancel = () => {
                 &lt;/rs-modal&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import { ref } from "vue";
-                import RsButton from "@/components/Button.vue";
-                import RsModal from "@/components/Modal.vue";
-
-                export default {
-                  components: {
-                    RsButton,
-                    RsModal,
-                  },
-                  setup() {
-                    const showModal = ref(false);
-                    const showModalCustom = ref(false);
-                    const showModalOK = ref(false);
-                    const showModalCancel = ref(false);
-                    return {
-                      showModal,
-                      showModalCustom,
-                      showModalOK,
-                      showModalCancel,
-                    };
-                  },
-                };
+              &lt;script setup&gt; 
+              const showModal = ref(false);
+              const showModalCustom = ref(false);
+              const showModalOK = ref(false);
+              const showModalCancel = ref(false);
               &lt;/script&gt;
             </code>
           </pre>
@@ -458,32 +390,15 @@ const clickCancel = () => {
                 &lt;/rs-modal&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import { ref } from "vue";
-                import RsButton from "@/components/Button.vue";
-                import RsModal from "@/components/Modal.vue";
-
-                export default {
-                  components: {
-                    RsButton,
-                    RsModal,
-                  },
-                  setup() {
-                    const showModal = ref(false);
-                    const clickOK = () => {
-                      alert("You have clicked OK");
-                    };
-                
-                    const clickCancel = () => {
-                      alert("You have clicked Cancel");
-                    };
-                    return {
-                      showModal,
-                      clickOK,
-                      clickCancel,
-                    };
-                  },
-                };
+              &lt;script setup&gt; 
+              const showModal = ref(false);
+              const clickOK = () => {
+                alert("You have clicked OK");
+              };
+          
+              const clickCancel = () => {
+                alert("You have clicked Cancel");
+              };
               &lt;/script&gt;
             </code>
           </pre>

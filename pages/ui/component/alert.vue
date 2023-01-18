@@ -59,18 +59,7 @@ const resetAlert = () => {
                 &lt;rs-alert variant="danger"&gt;Hi, this is a danger alert!&lt;/rs-alert&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import RsAlert from "@/components/Alert.vue";
-
-                export default {
-                  components: {
-                    RsAlert,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>
@@ -133,18 +122,7 @@ const resetAlert = () => {
                 &lt;rs-alert auto-dismiss :timer="1000"&gt;Hi, this is an auto dismissable alert!&lt;/rs-alert&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import RsAlert from "@/components/Alert.vue";
-
-                export default {
-                  components: {
-                    RsAlert,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>

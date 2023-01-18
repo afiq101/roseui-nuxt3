@@ -2,6 +2,8 @@
 definePageMeta({
   title: "Progress Bar",
 });
+
+const showCode1 = ref(false);
 </script>
 
 <template>
@@ -63,6 +65,38 @@ definePageMeta({
           :size="'md'"
           :show-value="true"
         ></rs-progress-bar>
+        <div class="flex justify-end">
+          <button
+            class="text-sm border border-slate-200 py-1 px-3 rounded-lg"
+            @click="showCode1 ? (showCode1 = false) : (showCode1 = true)"
+          >
+            Show Code
+          </button>
+        </div>
+        <ClientOnly>
+          <transition name="fade">
+            <div class="z-0" v-show="showCode1" v-highlight>
+              <SimpleBar style="height: 400px">
+                <pre class="language-html shadow-none">
+            <code>
+              &lt;template&gt; 
+                &lt;rs-progress-bar 
+                    label="Primary Progress"
+                    :value="11"
+                    :max="100"
+                    variant="primary|secondary|success|danger|warning|info"
+                    size="md|sm|lg"
+                    :show-value="true|false"
+                &gt;&lt;/rs-progress-bar&gt;
+              &lt;/template&gt;
+
+              &lt;script setup&gt;&lt;/script&gt;
+            </code>
+          </pre>
+              </SimpleBar>
+            </div>
+          </transition>
+        </ClientOnly>
       </template>
     </rs-card>
   </div>

@@ -1,4 +1,10 @@
 <script setup>
+definePageMeta({
+  title: "Table Basic",
+});
+
+const showCode1 = ref(false);
+
 const changedata = ref(false);
 const field = ["Id", "Name", "Amount(RM)", "Discount(%)"];
 const data = [
@@ -63,8 +69,24 @@ const data2 = [
 
 <template>
   <div>
+    <LayoutsBreadcrumb />
     <rs-card>
-      <template #header> Table</template>
+      <template #header>
+        <div class="flex">
+          <Icon class="mr-2 flex justify-center" name="ic:outline-info"></Icon
+          >Info
+        </div>
+      </template>
+      <template #body>
+        <p class="mb-4">
+          This is a basic table template. It is a Vue component that allows you
+          to create tables with a lot of different elements. 
+        </p>
+      </template>
+    </rs-card>
+
+    <rs-card>
+      <template #header> Basic </template>
       <template #body>
         <rs-button
           @click="changedata ? (changedata = false) : (changedata = true)"
@@ -86,6 +108,105 @@ const data2 = [
           basic
         >
         </rs-table>
+        <div class="flex justify-end">
+          <button
+            class="text-sm border border-slate-200 py-1 px-3 rounded-lg"
+            @click="showCode1 ? (showCode1 = false) : (showCode1 = true)"
+          >
+            Show Code
+          </button>
+        </div>
+        <ClientOnly>
+          <transition name="fade">
+            <div class="z-0" v-show="showCode1" v-highlight>
+              <SimpleBar style="height: 400px">
+                <pre class="language-html shadow-none">
+            <code>
+              &lt;template&gt;
+                &lt;rs-table
+                  :field="!changedata ? [] : field"
+                  :data="!changedata ? data : data2"
+                  :options="{
+                    variant: 'default',
+                    striped: true,
+                    bordered: true,
+                    borderless: true,
+                    hover: true,
+                    fixed: false,
+                  }"
+                  basic
+                &gt;
+                &lt;/rs-table&gt;
+              &lt;/template&gt;
+   
+              &lt;script setup&gt;
+                const changedata = ref(false);
+                const field = ["Id", "Name", "Amount(RM)", "Discount(%)"];
+                const data = [
+                  {
+                    id: 1,
+                    fullName: "Margit, The Fallen Omen",
+                    age: 25,
+                    email: "margit25@gmail.com",
+                  },
+                  {
+                    id: 2,
+                    fullName: "Malenia",
+                    age: 50,
+                    email: "malenia@gmail.com",
+                  },
+                  {
+                    id: 3,
+                    fullName: "Godrick Soldier",
+                    age: 30,
+                    email: "godrick@gmail.com",
+                  },
+                  {
+                    id: 4,
+                    fullName: "Godwyn, The Graften",
+                    age: 70,
+                    email: "godwyn@gmail.com",
+                  },
+                  {
+                    id: 5,
+                    fullName: "Ranni",
+                    age: 26,
+                    email: "ranni@gmail.com",
+                  },
+                ];
+                const data2 = [
+                  {
+                    no: 1,
+                    item: "Table",
+                    price: "RM20",
+                    discount: "10%",
+                  },
+                  {
+                    no: 2,
+                    item: "Chair",
+                    price: "RM10",
+                    discount: "20%",
+                  },
+                  {
+                    no: 3,
+                    item: "Lamp",
+                    price: "RM30",
+                    discount: "30%",
+                  },
+                  {
+                    no: 4,
+                    item: "Bed",
+                    price: "RM50",
+                    discount: "40%",
+                  },
+                ];
+              &lt;/script&gt;
+            </code>
+          </pre>
+              </SimpleBar>
+            </div>
+          </transition>
+        </ClientOnly>
       </template>
     </rs-card>
   </div>

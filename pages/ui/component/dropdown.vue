@@ -72,20 +72,7 @@ const dropdownItems = [
                 &lt;/rs-dropdown&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import RsDropdown from "@/components/Dropdown.vue";
-                import RsDropdownItem from "@/components/DropdownItem.vue";
-
-                export default {
-                  components: {
-                    RsDropdown,
-                    RsDropdownItem,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>
@@ -173,20 +160,7 @@ const dropdownItems = [
                 &lt;/rs-dropdown&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import RsDropdown from "@/components/Dropdown.vue";
-                import RsDropdownItem from "@/components/DropdownItem.vue";
-
-                export default {
-                  components: {
-                    RsDropdown,
-                    RsDropdownItem,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>
@@ -410,20 +384,7 @@ const dropdownItems = [
                 &lt;/rs-dropdown&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import RsDropdown from "@/components/Dropdown.vue";
-                import RsDropdownItem from "@/components/DropdownItem.vue";
-
-                export default {
-                  components: {
-                    RsDropdown,
-                    RsDropdownItem,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>
@@ -500,20 +461,7 @@ const dropdownItems = [
                 &lt;/rs-dropdown&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import RsDropdown from "@/components/Dropdown.vue";
-                import RsDropdownItem from "@/components/DropdownItem.vue";
-
-                export default {
-                  components: {
-                    RsDropdown,
-                    RsDropdownItem,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>
@@ -577,20 +525,7 @@ const dropdownItems = [
                 &lt;/rs-dropdown&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import RsDropdown from "@/components/Dropdown.vue";
-                import RsDropdownItem from "@/components/DropdownItem.vue";
-
-                export default {
-                  components: {
-                    RsDropdown,
-                    RsDropdownItem,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>

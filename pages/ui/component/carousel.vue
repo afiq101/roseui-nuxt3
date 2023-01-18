@@ -5,6 +5,8 @@ definePageMeta({
   title: "Calendar",
 });
 
+const showCode1 = ref(false);
+
 const onSwiper = (swiper) => {
   // console.log(swiper);
 };
@@ -59,6 +61,47 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
             </div>
           </swiper-slide>
         </swiper>
+        <div class="flex justify-end">
+          <button
+            class="text-sm border border-slate-200 py-1 px-3 rounded-lg my-2"
+            @click="showCode1 ? (showCode1 = false) : (showCode1 = true)"
+          >
+            Show Code
+          </button>
+        </div>
+        <ClientOnly>
+          <transition name="fade">
+            <div v-show="showCode1" v-highlight>
+              <SimpleBar style="height: 400px">
+                <pre class="language-html shadow-none">
+            <code>
+              &lt;template&gt; 
+                &lt;swiper
+                    :modules="modules"
+                    :slides-per-view="1"
+                    :centeredSlides="true"
+                    :pagination="{ clickable: true }"
+                    @swiper="onSwiper"
+                    @slideChange="onSlideChange"
+                    navigation
+                &gt;
+                  &lt;swiper-slide v-for="n in 10" :key="n"&gt;
+                    &#123;&#123; n &#125;&#125;
+                  &lt;/swiper-slide&gt;
+                &lt;/swiper&gt;
+              &lt;/template&gt;
+
+              &lt;script setup&gt; 
+              import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+
+              const modules = [Navigation, Pagination, Scrollbar, A11y];
+              &lt;/script&gt;
+            </code>
+          </pre>
+              </SimpleBar>
+            </div>
+          </transition>
+        </ClientOnly>
       </template>
     </rs-card>
   </div>

@@ -36,7 +36,7 @@
     "chart.js": "^3.9.1",
     "floating-vue": "^2.0.0-beta.20",
     "luxon": "^3.1.0",
-    "maska": "^1.5.0",
+    "maska": "^2.1.4",
     "simplebar": "^5.3.9",
     "simplebar-vue3": "^0.2.0",
     "swiper": "^8.4.4",

@@ -10,14 +10,14 @@ const props = defineProps({
   },
   iconSize: {
     type: String,
-    default: "18",
+    default: "20",
   },
 });
 </script>
 
 <template>
   <div
-    class="inline whitespace-nowrap text-center rounded-lg w-auto text-white px-3 py-1"
+    class="flex justify-center items-center whitespace-nowrap rounded-lg w-auto text-white px-3 py-1 "
     :class="{
       'bg-blue-500': variant === 'info',
       'bg-primary-400': variant === 'primary',
@@ -27,7 +27,6 @@ const props = defineProps({
     }"
   >
     <Icon
-      class="align-middle"
       v-if="icon"
       :name="icon"
       :size="iconSize"

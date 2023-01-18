@@ -48,6 +48,7 @@ const step = reactive({});
 const activeStep = ref(props.currentStep);
 const stepNames = ref(props.steps);
 const visitedSteps = ref([]);
+const componentLoad = ref(false);
 
 const toLowerCase = (str) => str.toLowerCase().replace(/\s/g, "");
 const stepIndex = (stepName) => stepNames.value.indexOf(stepName);
@@ -164,10 +165,15 @@ const checkStepValidity = (stepName) => {
     );
   }
 };
+
+onMounted(() => {
+  componentLoad.value = true;
+});
 </script>
 
 <template>
   <FormKit
+    v-if="componentLoad"
     type="form"
     :plugins="[stepPlugin]"
     :actions="formAction ? true : false"

@@ -7,6 +7,9 @@ definePageMeta({
 
 const calendarOptions = ref(null);
 
+const showCode1 = ref(false);
+const changeKey = ref(0);
+
 const handleDateClick = (arg) => {
   // alert("date click! " + arg.dateStr);
 };
@@ -41,6 +44,12 @@ calendarOptions.value = {
     { title: "event 4", date: "2022-07-22" },
   ],
 };
+
+onMounted(() => {
+  setTimeout(() => {
+    changeKey.value++;
+  }, 500);
+});
 </script>
 
 <template>
@@ -77,7 +86,66 @@ calendarOptions.value = {
           simple component that displays a grid of days.
         </p>
         <ClientOnly>
-          <FullCalendar :options="calendarOptions" />
+          <FullCalendar :key="changeKey" :options="calendarOptions" />
+        </ClientOnly>
+        <div class="flex justify-end">
+          <button
+            class="text-sm border border-slate-200 py-1 px-3 rounded-lg my-2"
+            @click="showCode1 ? (showCode1 = false) : (showCode1 = true)"
+          >
+            Show Code
+          </button>
+        </div>
+        <ClientOnly>
+          <transition name="fade">
+            <div v-show="showCode1" v-highlight>
+              <SimpleBar style="height: 400px">
+                <pre class="language-html shadow-none">
+            <code>
+              &lt;template&gt; 
+                &lt;ClientOnly&gt;
+                  &lt;FullCalendar :key="changeKey" :options="calendarOptions" /&gt;
+                &lt;/ClientOnly&gt;
+              &lt;/template&gt;
+
+              &lt;script setup&gt; 
+              const { $FullCalendar } = useNuxtApp();
+              const FullCalendar = $FullCalendar;
+
+              const calendarOptions = ref(null);
+
+              calendarOptions.value = {
+                ...FullCalendar?.options,
+                initialView: "dayGridMonth",
+                headerToolbar: {
+                  left: "prev,next title",
+                  right: "dayGridMonth,timeGridWeek,listWeek",
+                },
+                dragScroll: true,
+                dayMaxEvents: 2,
+                navLinks: true,
+                events: [
+                  { title: "event 1", start: "2022-07-05", end: "2022-07-08" },
+                  { title: "event 2", start: "2022-07-05", end: "2022-07-08" },
+                  { title: "event 3", start: "2022-07-05", end: "2022-07-08" },
+                  { title: "event 3", start: "2022-07-05", end: "2022-07-08" },
+                  { title: "event 3", start: "2022-07-05", end: "2022-07-08" },
+                  { title: "event 3", start: "2022-07-05", end: "2022-07-08" },
+                  { title: "event 4", date: "2022-07-22" },
+                ],
+              };
+
+              onMounted(() => {
+                setTimeout(() => {
+                  changeKey.value++;
+                }, 500);
+              });
+              &lt;/script&gt;
+            </code>
+          </pre>
+              </SimpleBar>
+            </div>
+          </transition>
         </ClientOnly>
       </template>
     </rs-card>

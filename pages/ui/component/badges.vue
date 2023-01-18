@@ -44,18 +44,7 @@ const showCode2 = ref(false);
                 &lt;rs-badge variant="danger"&gt;Danger&lt;/rs-badge&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import RsBadges from "@/components/Badges.vue";
-
-                export default {
-                  components: {
-                    RsBadges,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>
@@ -75,17 +64,17 @@ const showCode2 = ref(false);
           badges.
         </p>
         <div class="grid grid-cols-3 md:grid-cols-6 gap-4 gap-y-0">
-          <rs-badge variant="primary" icon="star" class="mb-4">
+          <rs-badge variant="primary" icon="material-symbols:star-outline-rounded" class="mb-4">
             Primary
           </rs-badge>
-          <rs-badge variant="info" icon="star" class="mb-4"> Info </rs-badge>
-          <rs-badge variant="success" icon="star" class="mb-4">
+          <rs-badge variant="info" icon="material-symbols:star-outline-rounded" class="mb-4"> Info </rs-badge>
+          <rs-badge variant="success" icon="material-symbols:star-outline-rounded" class="mb-4">
             Success
           </rs-badge>
-          <rs-badge variant="warning" icon="star" class="mb-4">
+          <rs-badge variant="warning" icon="material-symbols:star-outline-rounded" class="mb-4">
             Warning
           </rs-badge>
-          <rs-badge variant="danger" icon="star" class="mb-4">
+          <rs-badge variant="danger" icon="material-symbols:star-outline-rounded" class="mb-4">
             Danger
           </rs-badge>
         </div>
@@ -104,25 +93,14 @@ const showCode2 = ref(false);
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
-                &lt;rs-badge variant="primary" icon="star"&gt;Primary&lt;/rs-badge&gt;
-                &lt;rs-badge variant="info" icon="star"&gt;Info&lt;/rs-badge&gt;
-                &lt;rs-badge variant="success" icon="star"&gt;Success&lt;/rs-badge&gt;
-                &lt;rs-badge variant="warning" icon="star"&gt;Warning&lt;/rs-badge&gt;
-                &lt;rs-badge variant="danger" icon="star"&gt;Danger&lt;/rs-badge&gt;
+                &lt;rs-badge variant="primary" icon="material-symbols:star-outline-rounded"&gt;Primary&lt;/rs-badge&gt;
+                &lt;rs-badge variant="info" icon="material-symbols:star-outline-rounded"&gt;Info&lt;/rs-badge&gt;
+                &lt;rs-badge variant="success" icon="material-symbols:star-outline-rounded"&gt;Success&lt;/rs-badge&gt;
+                &lt;rs-badge variant="warning" icon="material-symbols:star-outline-rounded"&gt;Warning&lt;/rs-badge&gt;
+                &lt;rs-badge variant="danger" icon="material-symbols:star-outline-rounded"&gt;Danger&lt;/rs-badge&gt;
               &lt;/template&gt;
 
-              &lt;script&gt; 
-                import RsBadges from "@/components/Badges.vue";
-
-                export default {
-                  components: {
-                    RsBadges,
-                  },
-                  setup() {
-                    return {};
-                  },
-                };
-              &lt;/script&gt;
+              &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
               </SimpleBar>

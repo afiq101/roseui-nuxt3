@@ -6,10 +6,11 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
-}); 
+});
 
 const dateNow = ref(DateTime.now());
 const arrDate = ref([]);
+const changeKey = ref(0);
 
 const dayInWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
@@ -153,6 +154,10 @@ const checkEvent = (date) => {
 
 onMounted(() => {
   getDateInMonth();
+
+  setTimeout(() => {
+    changeKey.value++;
+  }, 500);
 });
 
 watch(dateNow, () => {
