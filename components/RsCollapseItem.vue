@@ -84,7 +84,7 @@ onMounted(() => {
     :style="`max-height: ${maxHeight}px; transition-property: max-height`"
     @click="onClick"
   >
-    <div class="rs-collapse-header">
+    <div class="rs-collapse-header" @click="onClick">
       <slot v-if="!!$slots.title" name="title"></slot>
       <span v-else> {{ title }}</span>
     </div>
