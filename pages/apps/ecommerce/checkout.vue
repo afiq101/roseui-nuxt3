@@ -45,7 +45,7 @@ const formatPrice = (price) => {
                     >
                     <span
                       v-if="product.discountedPrice"
-                      class="text-base line-through text-secondary ml-0 md:ml-2 mt-1 block md:inline-block text-gray-400"
+                      class="text-base line-through ml-0 md:ml-2 mt-1 block md:inline-block text-gray-500"
                     >
                       {{ product.currency }}{{ formatPrice(product.price) }}
                     </span>
@@ -56,7 +56,7 @@ const formatPrice = (price) => {
           </SimpleBar>
           <div class="mt-7 px-10">
             <span class="font-semibold">Address</span>
-            <rs-card class="mt-7 p-5 text-white !bg-primary-400">
+            <rs-card class="mt-7 p-5 text-white !bg-primary">
               <h6>Home</h6>
               <p>
                 116, Jalan Tengku Badar, Kampung Raja Uda, 42000 Pelabuhan

@@ -3,7 +3,7 @@ definePageMeta({
   title: "Colors",
 });
 const defaultColor = {
-  primary: ["bg-primary-400", "text-white"],
+  primary: ["bg-primary", "text-white"],
   secondary: ["bg-secondary-400", "text-white"],
   info: ["bg-info", "text-white"],
   success: ["bg-success", "text-white"],

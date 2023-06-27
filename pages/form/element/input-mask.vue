@@ -23,7 +23,7 @@ const showCode2 = ref(false);
           <a
             href="https://beholdr.github.io/maska/#/"
             target="_blank"
-            class="hover:underline text-primary-400"
+            class="hover:underline text-primary"
             >Maska</a
           >
           which is a powerfull input mask for Vue. It is a Vue component that

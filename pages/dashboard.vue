@@ -239,15 +239,15 @@ onMounted(() => {
       <rs-card>
         <div class="summary-1 pt-5 pb-3 px-5 flex items-center gap-4">
           <div
-            class="p-5 flex justify-center items-center bg-primary-100 rounded-2xl"
+            class="p-5 flex justify-center items-center bg-primary/20 rounded-2xl"
           >
-            <Icon class="text-primary-500" name="ic:outline-attach-money"></Icon>
+            <Icon class="text-primary" name="ic:outline-attach-money"></Icon>
           </div>
           <div class="flex-1 truncate">
             <span class="block font-semibold text-xl leading-tight">
               RM 100,000</span
             >
-            <span class="text-base font-semibold text-secondary"
+            <span class="text-base font-semibold text-gray-500"
               >Total Revenues</span
             >
           </div>
@@ -282,7 +282,7 @@ onMounted(() => {
           </div>
           <div class="flex-1 truncate">
             <span class="block font-semibold text-xl leading-tight"> 512</span>
-            <span class="text-base font-semibold text-secondary"
+            <span class="text-base font-semibold text-gray-500"
               >Total Users</span
             >
           </div>
@@ -314,7 +314,7 @@ onMounted(() => {
           </div>
           <div class="flex-1 truncate">
             <span class="block font-semibold text-xl leading-tight"> 20</span>
-            <span class="text-base font-semibold text-secondary"
+            <span class="text-base font-semibold text-gray-500"
               >Total Products</span
             >
           </div>
@@ -348,7 +348,7 @@ onMounted(() => {
             <span class="block font-semibold text-xl leading-tight">
               2,452</span
             >
-            <span class="text-base font-semibold text-secondary"
+            <span class="text-base font-semibold text-gray-500"
               >Total Viewers</span
             >
           </div>

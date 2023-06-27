@@ -270,7 +270,7 @@ const pages = computed(() => {
 
             <span
               v-if="product.discount && product.discount != 0"
-              class="product-discount text-sm bg-primary-500 text-white absolute top-3 -right-2 px-2 py-1 rounded-md"
+              class="product-discount text-sm bg-primary text-white absolute top-3 -right-2 px-2 py-1 rounded-md"
             >
               {{ product.discount }}% off
             </span>
@@ -280,7 +280,7 @@ const pages = computed(() => {
               <span class="block text-base font-semibold line-clamp-1">{{
                 product.name
               }}</span>
-              <span class="text-secondary line-clamp-1 text-sm">
+              <span class="text-gray-500 line-clamp-1 text-sm">
                 {{ product.description }}
               </span>
             </div>
@@ -312,7 +312,7 @@ const pages = computed(() => {
               </div>
               <div class="product-price flex justify-between">
                 <div class="truncate">
-                  <div class="text-sm text-primary-500">
+                  <div class="text-sm text-primary">
                     {{ product.currency
                     }}<span class="text-lg">
                       {{
@@ -324,7 +324,7 @@ const pages = computed(() => {
                   </div>
                   <span
                     v-if="product.discountedPrice"
-                    class="text-sm line-through text-secondary mt-1"
+                    class="text-sm line-through text-gray-500 mt-1"
                   >
                     {{ product.currency }}{{ formatPrice(product.price) }}
                   </span>

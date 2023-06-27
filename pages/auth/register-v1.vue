@@ -29,7 +29,7 @@ definePageMeta({
             <FormKit type="checkbox" label="agreement">
               <template #label
                 >I agree to the
-                <a class="text-primary-400 hover:underline ml-1"
+                <a class="text-primary hover:underline ml-1"
                   >Term and Services</a
                 >
               </template>
@@ -43,7 +43,7 @@ definePageMeta({
             Already have an account?
             <NuxtLink
               to="/auth/login-v1"
-              class="text-primary-400 hover:underline"
+              class="text-primary hover:underline"
               >Login</NuxtLink
             >
           </p>

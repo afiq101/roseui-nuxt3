@@ -68,7 +68,7 @@ const formatSold = (n) => {
         <div class="product-content w-full md:w-3/5">
           <a
             href="#"
-            class="font-medium text-secondary cursor-pointer hover:text-gray-500"
+            class="font-medium text-gray-500 cursor-pointer hover:text-gray-500"
           >
             {{ product.store }}
           </a>
@@ -97,12 +97,12 @@ const formatSold = (n) => {
             </div>
           </div>
           <div class="product-price my-2">
-            <span class="text-primary-500 text-3xl md:text-4xl font-semibold"
+            <span class="text-primary text-3xl md:text-4xl font-semibold"
               >RM{{ formatPrice(product.price) }}</span
             >
             <span
               v-if="product.discountedPrice"
-              class="text-lg line-through text-secondary ml-0 md:ml-2 mt-1 block md:inline-block"
+              class="text-lg line-through text-gray-500 ml-0 md:ml-2 mt-1 block md:inline-block"
             >
               {{ product.currency }}{{ formatPrice(product.price) }}
             </span>
@@ -135,7 +135,7 @@ const formatSold = (n) => {
                     v-for="(val, index) in product.attributes"
                     :key="index"
                   >
-                    <span class="font-normal text-secondary"
+                    <span class="font-normal text-gray"
                       >{{ val.name }}:
                     </span>
                     <span>{{ val.value }}</span>
@@ -152,7 +152,7 @@ const formatSold = (n) => {
         <div
           class="flex flex-col items-center justify-center px-4 my-4 md:my-0"
         >
-          <Icon size="1.75rem" class="text-primary-400" name="ph:tag"></Icon>
+          <Icon size="1.75rem" class="text-primary" name="ph:tag"></Icon>
           <span class="text-lg font-semibold my-2">Lowest Price So Far</span>
           <p class="text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -164,7 +164,7 @@ const formatSold = (n) => {
         >
           <Icon
             size="1.75rem"
-            class="text-primary-400"
+            class="text-primary"
             name="ph:lightning"
           ></Icon>
           <span class="text-lg font-semibold my-2">Fast Delivery</span>
@@ -176,7 +176,7 @@ const formatSold = (n) => {
         <div
           class="flex flex-col items-center justify-center px-4 my-4 md:my-0"
         >
-          <Icon size="1.75rem" class="text-primary-400" name="ph:shield"></Icon>
+          <Icon size="1.75rem" class="text-primary" name="ph:shield"></Icon>
           <span class="text-lg font-semibold my-2">3 Years Warranty</span>
           <p class="text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

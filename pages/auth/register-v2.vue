@@ -30,7 +30,7 @@ definePageMeta({
         >
           <template #label
             >I agree to the
-            <a class="text-primary-400 hover:underline ml-1"
+            <a class="text-primary hover:underline ml-1"
               >Term and Services</a
             >
           </template>
@@ -42,7 +42,7 @@ definePageMeta({
 
         <p class="mt-3 text-center text-slate-500">
           Already have an account?
-          <NuxtLink to="/auth/login-v2" class="text-primary-400 hover:underline"
+          <NuxtLink to="/auth/login-v2" class="text-primary hover:underline"
             >Login</NuxtLink
           >
         </p>

@@ -41,6 +41,7 @@ const props = defineProps({
       sortable: true,
       filterable: true,
       responsive: false,
+      outsideBorder: false,
     }),
   },
   grid: {
@@ -49,7 +50,14 @@ const props = defineProps({
   },
   pageSize: {
     type: Number,
-    default: 10,
+    default: 5,
+  },
+  sort: {
+    type: Object,
+    default: () => ({
+      column: "",
+      direction: "asc",
+    }),
   },
 });
 
@@ -75,9 +83,8 @@ const openFilter = ref(false);
 
 const hideTable = ref(false);
 
-// if (dataLength.value == 0) {
-//   return
-// }
+// Other Variable
+const sortColumnFirstTime = ref(false);
 
 const isDesktop = computed(() => {
   return windowWidth.value >= mobileWidth ? true : false;
@@ -91,13 +98,56 @@ if (props.optionsAdvanced.responsive) {
   }
 }
 
+const camelCasetoTitle = (str, exclusions = []) => {
+  if (exclusions.includes(str)) {
+    return str.replace(/([A-Z])/g, " $1").trim();
+  } else if (/\(.*\)/.test(str)) {
+    return str; // if the string contains parentheses, return the original string
+  } else {
+    return str.replace(/([A-Z])/g, " $1").replace(/^./, (str) => {
+      return str.toUpperCase();
+    });
+  }
+};
+
+const spacingCharactertoCamelCase = (array) => {
+  // Loop array string and convert to camel case
+
+  let result = [];
+
+  array.forEach((element) => {
+    if (element.charAt(0) == element.charAt(0).toUpperCase()) {
+      // Camelcase the string and remove spacing
+      // and if there is () in the string, do Uppercase inside the () and dont spacing it
+
+      let camelCase = element
+        .replace(/([A-Z])/g, " $1")
+        .replace(/^./, (str) => {
+          return str.toUpperCase();
+        })
+        .replace(/\s/g, "");
+
+      let resultCamelCase = camelCase.replace(/\(([^)]+)\)/, (str) => {
+        return str.toUpperCase();
+      });
+
+      result.push(resultCamelCase);
+    } else {
+      result.push(element);
+    }
+  });
+
+  // console.log(result);
+  return result;
+};
+
 // watch props.data change and redo all the data
 watch(
   () => [props.data, props.field],
   () => {
-    if (props.field.length > 0) {
-      columnTitle.value = props.field;
-      dataTitle.value = props.field;
+    if (props.field && props.field.length > 0) {
+      columnTitle.value = spacingCharactertoCamelCase(props.field);
+      dataTitle.value = spacingCharactertoCamelCase(props.field);
     } else {
       columnTitle.value = Object.keys(dataTable.value[0]);
       dataTitle.value = Object.keys(dataTable.value[0]);
@@ -106,18 +156,12 @@ watch(
   { immediate: true }
 );
 
-const camelCasetoTitle = (str) => {
-  return str.replace(/([A-Z])/g, " $1").replace(/^./, (str) => {
-    return str.toUpperCase();
-  });
-};
-
 const setColumnTitle = (data) => {
   try {
-    if (props.field.length == 0) {
+    if (props.field && props.field.length == 0) {
       columnTitle.value = Object.keys(data);
     } else {
-      columnTitle.value = props.field;
+      columnTitle.value = spacingCharactertoCamelCase(props.field);
     }
   } catch (error) {
     console.log(error);
@@ -127,7 +171,7 @@ const setColumnTitle = (data) => {
 const filteredDatabyTitle = (data, title) => {
   let result = "";
   try {
-    if (props.field.length == 0) {
+    if (props.field && props.field.length == 0) {
       Object.entries(data).forEach(([key, value]) => {
         if (key === title) {
           result = value;
@@ -143,7 +187,7 @@ const filteredDatabyTitle = (data, title) => {
 
       result = arr[index];
     }
-    if (result === "") result = "-";
+    if (result === "" || result === null) result = "-";
     return result;
   } catch (error) {
     console.log(error);
@@ -151,7 +195,9 @@ const filteredDatabyTitle = (data, title) => {
   }
 };
 
-setColumnTitle(dataTable.value[0]);
+onMounted(() => {
+  setColumnTitle(dataTable.value[0]);
+});
 
 // Computed data
 const computedData = computed(() => {
@@ -161,8 +207,27 @@ const computedData = computed(() => {
     .slice()
     .sort((a, b) => {
       let modifier = 1;
-      let a1 = a[columnTitle.value[currentSort.value]];
-      let b1 = b[columnTitle.value[currentSort.value]];
+
+      columnTitle.value.forEach((title, index) => {
+        // console.log(title, props.sort.column);
+        // First sort by column title
+        if (title === props.sort.column && !sortColumnFirstTime.value) {
+          currentSort.value = index;
+          currentSortDir.value = props.sort.direction;
+          sortColumnFirstTime.value = true;
+        }
+      });
+
+      // Check if column title is number or string and convert spacing to camelcase
+      let a1 = filteredDatabyTitle(a, columnTitle.value[currentSort.value]);
+      let b1 = filteredDatabyTitle(b, columnTitle.value[currentSort.value]);
+
+      if (typeof a1 === "string") a1 = a1.toLowerCase();
+      if (typeof b1 === "string") b1 = b1.toLowerCase();
+
+      // Convert string to number if possible
+      if (isNumeric(a1)) a1 = parseFloat(a1);
+      if (isNumeric(b1)) b1 = parseFloat(b1);
 
       if (currentSortDir.value === "desc") modifier = -1;
       if (a1 < b1) return -1 * modifier;
@@ -179,6 +244,7 @@ const computedData = computed(() => {
             value.toString().toLowerCase().includes(keyword.value.toLowerCase())
           ) {
             result = true;
+            currentPage.value = 1;
           }
         } catch (error) {
           result = false;
@@ -195,6 +261,10 @@ const computedData = computed(() => {
   dataLength.value = totalData;
   return result;
 });
+
+const isNumeric = (n) => {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+};
 
 const totalEntries = computed(() => {
   return dataLength.value;
@@ -352,9 +422,10 @@ watch(
 
 <template>
   <div
+    v-if="data && data.length > 0 && dataTable && dataTable.length > 0"
     class="table-wrapper"
     :class="{
-      '!border': advanced && !hideTable,
+      '!border': advanced && !hideTable && optionsAdvanced.outsideBorder,
     }"
   >
     <div
@@ -368,7 +439,7 @@ watch(
       <div
         class="table-header-filter"
         :class="{
-          '!items-center !gap-0': !optionsAdvanced.filterable,
+          '!items-center !gap-3': !optionsAdvanced.filterable,
         }"
       >
         <div>
@@ -395,7 +466,7 @@ watch(
           <!-- <rs-button class="mt-2">asdaasd</rs-button> -->
         </div>
         <div class="flex justify-center items-center gap-x-2">
-          <span class="text-secondary">Result per page:</span>
+          <span class="text-gray-500">Result per page:</span>
           <FormKit
             type="select"
             v-model="pageSize"
@@ -437,7 +508,7 @@ watch(
     >
       <div class="flex flex-wrap items-center justify-start gap-x-2">
         <div
-          class="flex items-center justify-center gap-x-2 border border-primary-400 text-primary-400 rounded-lg py-1 px-2"
+          class="flex items-center justify-center gap-x-2 border border-primary text-primary rounded-lg py-1 px-2"
           v-for="(val, index) in filterComputed"
           :key="index"
         >
@@ -452,7 +523,7 @@ watch(
       </div>
     </div>
     <div class="w-full overflow-x-auto">
-      <ClientOnly>
+      <client-only>
         <table
           v-if="!hideTable"
           class="table-content"
@@ -468,17 +539,16 @@ watch(
               'border-y': !options.borderless,
               'border-gray-200 bg-gray-100 dark:bg-gray-800':
                 options.variant === 'default',
-              'border-primary-200 bg-primary-400 text-white ':
+              'border-primary/50 bg-primary text-white ':
                 options.variant === 'primary',
-              'border-gray-200 bg-secondary text-white':
+              'border-secondary/50 bg-secondary text-white':
                 options.variant === 'secondary',
-              'border-blue-200 bg-blue-500 text-white ':
-                options.variant === 'info',
-              'border-green-200 bg-green-500 text-white':
+              'border-info/50 bg-info text-white ': options.variant === 'info',
+              'border-success/50 bg-success text-white':
                 options.variant === 'success',
-              'border-orange-200 bg-warning text-white':
+              'border-warning/50 bg-warning text-white':
                 options.variant === 'warning',
-              'border-red-200 bg-red-500 text-white':
+              'border-danger/50 bg-danger text-white':
                 options.variant === 'danger',
             }"
           >
@@ -489,12 +559,12 @@ watch(
                   'border-r last:border-l last:border-r-0':
                     options.bordered && !options.borderless,
                   'border-gray-300': options.variant === 'default',
-                  'border-primary-300': options.variant === 'primary',
-                  'border-gray-300': options.variant === 'secondary',
-                  'border-blue-300': options.variant === 'info',
-                  'border-green-300': options.variant === 'success',
-                  'border-orange-300': options.variant === 'warning',
-                  'border-red-300': options.variant === 'danger',
+                  'border-primary/80': options.variant === 'primary',
+                  'border-secondary/80': options.variant === 'secondary',
+                  'border-info/80': options.variant === 'info',
+                  'border-success/80': options.variant === 'success',
+                  'border-warning/80': options.variant === 'warning',
+                  'border-danger/80': options.variant === 'danger',
                   'w-36': options.fixed,
                   'cursor-pointer': optionsAdvanced.sortable && advanced,
                 }"
@@ -505,7 +575,7 @@ watch(
                 v-for="(val, index) in columnTitle"
                 :key="index"
               >
-                {{ field.length > 0 ? val : camelCasetoTitle(val) }}
+                {{ camelCasetoTitle(val) }}
                 <div
                   v-if="optionsAdvanced.sortable && advanced"
                   class="sortable"
@@ -540,31 +610,31 @@ watch(
                 'border-b-0': options.borderless,
                 'border-gray-200 odd:bg-white even:bg-slate-50 dark:even:bg-slate-700 dark:odd:bg-slate-800':
                   options.variant === 'default' && options.striped,
-                'border-primary-100 odd:bg-white even:bg-primary-50':
+                'border-primary/20 odd:bg-white even:bg-primary/5':
                   options.variant === 'primary' && options.striped,
-                'border-gray-100 odd:bg-white even:bg-gray-50':
+                'border-secondary/20 odd:bg-white even:bg-secondary/5':
                   options.variant === 'secondary' && options.striped,
-                'border-blue-100 odd:bg-white even:bg-blue-50':
+                'border-info/20 odd:bg-white even:bg-info/5':
                   options.variant === 'info' && options.striped,
-                'border-green-100 odd:bg-white even:bg-green-50':
+                'border-success/20 odd:bg-white even:bg-success/5':
                   options.variant === 'success' && options.striped,
-                'border-orange-100 odd:bg-white even:bg-orange-50':
+                'border-warning/20 odd:bg-white even:bg-warning/5':
                   options.variant === 'warning' && options.striped,
-                'border-red-100 odd:bg-white even:bg-red-50':
+                'border-danger/20 odd:bg-white even:bg-danger/5':
                   options.variant === 'danger' && options.striped,
                 'cursor-pointer hover:bg-gray-50':
                   options.hover && options.variant === 'default',
-                'cursor-pointer hover:bg-primary-50':
+                'cursor-pointer hover:bg-primary/5':
                   options.hover && options.variant === 'primary',
-                'cursor-pointer hover:bg-gray-50':
+                'cursor-pointer hover:bg-secondary/5':
                   options.hover && options.variant === 'secondary',
-                'cursor-pointer hover:bg-blue-50':
+                'cursor-pointer hover:bg-info/5':
                   options.hover && options.variant === 'info',
-                'cursor-pointer hover:bg-green-50':
+                'cursor-pointer hover:bg-success/5':
                   options.hover && options.variant === 'success',
-                'cursor-pointer hover:bg-orange-50':
+                'cursor-pointer hover:bg-warning/5':
                   options.hover && options.variant === 'warning',
-                'cursor-pointer hover:bg-red-50':
+                'cursor-pointer hover:bg-danger/5':
                   options.hover && options.variant === 'danger',
               }"
               v-for="(val1, index1) in computedData"
@@ -576,12 +646,12 @@ watch(
                   'border-r last:border-l last:border-r-0':
                     options.bordered && !options.borderless,
                   'border-gray-100': options.variant === 'default',
-                  'border-primary-100': options.variant === 'primary',
-                  'border-gray-100': options.variant === 'secondary',
-                  'border-blue-100': options.variant === 'info',
-                  'border-green-100': options.variant === 'success',
-                  'border-orange-100': options.variant === 'warning',
-                  'border-red-100': options.variant === 'danger',
+                  'border-primary/20': options.variant === 'primary',
+                  'border-secondary/20': options.variant === 'secondary',
+                  'border-info/20': options.variant === 'info',
+                  'border-success/20': options.variant === 'success',
+                  'border-warning/20': options.variant === 'warning',
+                  'border-danger/20': options.variant === 'danger',
                 }"
                 v-for="(val2, index2) in columnTitle"
                 :key="index2"
@@ -635,35 +705,47 @@ watch(
             </rs-collapse-item>
           </rs-collapse>
         </div>
-      </ClientOnly>
+      </client-only>
     </div>
     <div v-if="advanced" class="table-footer">
       <div class="flex justify-center items-center gap-x-2">
-        <span class="text-sm text-secondary hidden md:block"
+        <span class="text-sm text-gray-500 hidden md:block"
           >Showing {{ pageSize * currentPage - pageSize + 1 }} to
           {{ pageSize * currentPage }} of {{ totalEntries }} entries</span
         >
       </div>
       <div class="table-footer-page">
         <rs-button
-          variant="primary-outline"
-          class="rounded-full !p-1 w-8 h-8"
+          :variant="`${
+            options.variant == 'default' ? 'primary' : options.variant
+          }-outline`"
+          class="!rounded-full !p-1 !w-8 !h-8"
           @click="firstPage"
           :disabled="currentPage == 1"
         >
           <Icon name="ic:round-keyboard-double-arrow-left" size="1rem"></Icon>
         </rs-button>
         <rs-button
-          variant="primary-outline"
-          class="rounded-full !p-1 w-8 h-8"
+          :variant="`${
+            options.variant == 'default' ? 'primary' : options.variant
+          }-outline`"
+          class="!rounded-full !p-1 !w-8 !h-8"
           @click="prevPage"
           :disabled="currentPage == 1"
         >
           <Icon name="ic:round-keyboard-arrow-left" size="1rem"></Icon>
         </rs-button>
         <rs-button
-          :variant="currentPage == val ? 'primary' : 'primary-outline'"
-          class="rounded-full !p-1 w-8 h-8"
+          :variant="`${
+            currentPage == val && options.variant != 'default'
+              ? options.variant
+              : currentPage == val && options.variant == 'default'
+              ? 'primary'
+              : options.variant == 'default'
+              ? 'primary-outline'
+              : options.variant + '-outline'
+          }`"
+          class="!rounded-full !p-1 !w-8 !h-8"
           v-for="(val, index) in pages"
           :key="index"
           @click="pageChange(val)"
@@ -671,16 +753,20 @@ watch(
           {{ val }}
         </rs-button>
         <rs-button
-          variant="primary-outline"
-          class="rounded-full !p-1 w-8 h-8"
+          :variant="`${
+            options.variant == 'default' ? 'primary' : options.variant
+          }-outline`"
+          class="!rounded-full !p-1 !w-8 !h-8"
           @click="nextPage"
           :disabled="currentPage == totalPage"
         >
           <Icon name="ic:round-keyboard-arrow-right" size="1rem"></Icon>
         </rs-button>
         <rs-button
-          variant="primary-outline"
-          class="rounded-full !p-1 w-8 h-8"
+          :variant="`${
+            options.variant == 'default' ? 'primary' : options.variant
+          }-outline`"
+          class="!rounded-full !p-1 !w-8 !h-8"
           @click="lastPage"
           :disabled="currentPage == totalPage"
         >

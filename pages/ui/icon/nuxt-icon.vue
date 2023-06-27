@@ -20,7 +20,7 @@ definePageMeta({
         list of
         <a
           href="https://icones.js.org/"
-          class="underline text-primary-400"
+          class="underline text-primary"
           target="_blank"
           >icon sets</a
         >

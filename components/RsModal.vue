@@ -45,6 +45,10 @@ const props = defineProps({
     type: Function,
     default: () => {},
   },
+  hideFooter: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const closeModal = () => {
@@ -64,6 +68,7 @@ const validateCancelCallback = () => {
         v-if="modelValue"
         @click.self="closeModal"
         class="modal fixed top-0 left-0 w-full h-full overflow-hidden"
+        style="z-index: 1000"
         :class="{
           'flex items-start': position == 'top',
           'flex items-center': position == 'center',
@@ -73,7 +78,7 @@ const validateCancelCallback = () => {
       >
         <div
           v-show="modelValue"
-          class="modal-dialog"
+          class="modal-dialog w-full md:w-auto"
           :style="{
             width: size == 'sm' ? '300px' : size == 'md' ? '500px' : '800px',
           }"
@@ -95,11 +100,14 @@ const validateCancelCallback = () => {
               ></Icon>
             </div>
             <div class="modal-body relative p-4">
-              <slot name="body"></slot>
-              <slot v-if="!$slots.body"></slot>
+              <perfect-scrollbar style="max-height: 70vh">
+                <slot name="body"></slot>
+                <slot v-if="!$slots.body"></slot>
+              </perfect-scrollbar>
             </div>
             <div
-              class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 dark:border-slate-700 rounded-b-md gap-x-3"
+              v-if="!hideFooter"
+              class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end px-4 pb-4 rounded-b-md gap-x-3"
             >
               <slot name="footer"></slot>
               <rs-button

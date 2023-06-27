@@ -16,7 +16,7 @@ const showCode1 = ref(false);
           <a
             href="https://vueup.github.io/vue-quill/"
             target="_blank"
-            class="hover:underline text-primary-400"
+            class="hover:underline text-primary"
             >VueQuill</a
           >
           is a WYSIWYG editor that can be used to create content in a visual
@@ -39,7 +39,7 @@ const showCode1 = ref(false);
           <a
             href="https://vueup.github.io/vue-quill/guide/"
             target="_blank"
-            class="hover:underline text-primary-400"
+            class="hover:underline text-primary"
             >https://vueup.github.io/vue-quill/guide/</a
           >
         </p>

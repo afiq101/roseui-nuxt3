@@ -33,7 +33,7 @@ const computedKey = computed(() => {
           <a
             href="https://formkit.com"
             target="_blank"
-            class="hover:underline text-primary-400"
+            class="hover:underline text-primary"
             >Formkit</a
           >
           which is a powerfull form builder for Vue. It is a Vue component that
@@ -170,7 +170,7 @@ const computedKey = computed(() => {
             href="
             https://formkit.com/essentials/validation"
             target="_blank"
-            class="hover:underline text-primary-400"
+            class="hover:underline text-primary"
             >Formkit documentation</a
           >
           for more information.

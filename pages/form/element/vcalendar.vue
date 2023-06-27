@@ -36,7 +36,7 @@ onMounted(() => {
           <a
             href="https://vcalendar.io/"
             target="_blank"
-            class="hover:underline text-primary-400"
+            class="hover:underline text-primary"
             >V-Calendar</a
           >
           which is a Vue component that allows you to create a calendar.

@@ -30,7 +30,7 @@ definePageMeta({
           />
           <FormKit type="checkbox" label="Remember Me" />
           <NuxtLink
-            class="flex items-center justify-end h-5 mt-1 text-primary-400 hover:underline"
+            class="flex items-center justify-end h-5 mt-1 text-primary hover:underline"
             to="/auth/forgot-password-v2"
             >Forgot Password?</NuxtLink
           >
@@ -52,7 +52,7 @@ definePageMeta({
           Don't have an account?
           <NuxtLink
             to="/auth/register-v2"
-            class="text-primary-400 hover:underline"
+            class="text-primary hover:underline"
             >Sign Up</NuxtLink
           >
         </p>

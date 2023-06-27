@@ -270,7 +270,7 @@ const selected = [];
           <a
             href="https://vue-select.org"
             target="_blank"
-            class="hover:underline text-primary-400"
+            class="hover:underline text-primary"
             >Vue Select</a
           >
           is a feature rich select/dropdown/typeahead component. It provides a

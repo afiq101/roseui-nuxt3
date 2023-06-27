@@ -5,7 +5,6 @@ definePageMeta({
 
 const showCode1 = ref(false);
 
-const changedata = ref(false);
 const field = ["Id", "Name", "Amount(RM)", "Discount(%)"];
 const data = [
   {
@@ -39,32 +38,6 @@ const data = [
     email: "ranni@gmail.com",
   },
 ];
-const data2 = [
-  {
-    no: 1,
-    item: "Table",
-    price: "RM20",
-    discount: "10%",
-  },
-  {
-    no: 2,
-    item: "Chair",
-    price: "RM10",
-    discount: "20%",
-  },
-  {
-    no: 3,
-    item: "Lamp",
-    price: "RM30",
-    discount: "30%",
-  },
-  {
-    no: 4,
-    item: "Bed",
-    price: "RM50",
-    discount: "40%",
-  },
-];
 </script>
 
 <template>
@@ -80,7 +53,7 @@ const data2 = [
       <template #body>
         <p class="mb-4">
           This is a basic table template. It is a Vue component that allows you
-          to create tables with a lot of different elements. 
+          to create tables with a lot of different elements.
         </p>
       </template>
     </rs-card>
@@ -88,15 +61,9 @@ const data2 = [
     <rs-card>
       <template #header> Basic </template>
       <template #body>
-        <rs-button
-          @click="changedata ? (changedata = false) : (changedata = true)"
-          class="mb-4"
-        >
-          Change data
-        </rs-button>
         <rs-table
-          :field="!changedata ? [] : field"
-          :data="!changedata ? data : data2"
+          :field="field"
+          :data="data"
           :options="{
             variant: 'default',
             striped: true,
@@ -124,8 +91,8 @@ const data2 = [
             <code>
               &lt;template&gt;
                 &lt;rs-table
-                  :field="!changedata ? [] : field"
-                  :data="!changedata ? data : data2"
+                  :field="field"
+                  :data="data"
                   :options="{
                     variant: 'default',
                     striped: true,
@@ -140,7 +107,6 @@ const data2 = [
               &lt;/template&gt;
    
               &lt;script setup&gt;
-                const changedata = ref(false);
                 const field = ["Id", "Name", "Amount(RM)", "Discount(%)"];
                 const data = [
                   {
@@ -172,32 +138,6 @@ const data2 = [
                     fullName: "Ranni",
                     age: 26,
                     email: "ranni@gmail.com",
-                  },
-                ];
-                const data2 = [
-                  {
-                    no: 1,
-                    item: "Table",
-                    price: "RM20",
-                    discount: "10%",
-                  },
-                  {
-                    no: 2,
-                    item: "Chair",
-                    price: "RM10",
-                    discount: "20%",
-                  },
-                  {
-                    no: 3,
-                    item: "Lamp",
-                    price: "RM30",
-                    discount: "30%",
-                  },
-                  {
-                    no: 4,
-                    item: "Bed",
-                    price: "RM50",
-                    discount: "40%",
                   },
                 ];
               &lt;/script&gt;

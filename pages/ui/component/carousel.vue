@@ -33,7 +33,7 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
           <a
             href="https://swiperjs.com/vue"
             target="_blank"
-            class="hover:underline text-primary-400"
+            class="hover:underline text-primary"
             >Swiper JS</a
           >
           which is a Vue component that allows you to create a carousel.

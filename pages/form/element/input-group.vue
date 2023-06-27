@@ -5,6 +5,7 @@ definePageMeta({
 
 const showCode1 = ref(false);
 const showCode2 = ref(false);
+const showCode3 = ref(false);
 const key = ref("jg9dsk23rnfsd");
 
 const generateKey = () => {
@@ -227,6 +228,46 @@ const computedKey = computed(() => {
               const computedKey = computed(() => {
                 return key.value;
               });
+              &lt;/script&gt;
+            </code>
+          </pre>
+              </SimpleBar>
+            </div>
+          </transition>
+        </ClientOnly>
+      </template>
+    </rs-card>
+
+    <rs-card>
+      <template #header>Fieldset</template>
+      <template #body>
+        <rs-fieldset label="Group Input">
+          <FormKit type="text" label="Text 1" />
+          <FormKit type="text" label="Text 2" />
+        </rs-fieldset>
+        <div class="flex justify-end mt-4">
+          <button
+            class="text-sm border border-slate-200 py-1 px-3 rounded-lg"
+            @click="showCode3 ? (showCode3 = false) : (showCode3 = true)"
+          >
+            Show Code
+          </button>
+        </div>
+        <ClientOnly>
+          <transition name="fade">
+            <div class="z-0" v-show="showCode3" v-highlight>
+              <SimpleBar style="height: 400px">
+                <pre class="language-html shadow-none">
+            <code>
+              &lt;rs-fieldset&gt;
+                &lt;template&gt;
+                  &lt;FormKit type="text" label="Text 1" /&gt;
+                  &lt;FormKit type="text" label="Text 2" /&gt;
+                &lt;/template&gt;
+              &lt;/rs-fieldset&gt;
+
+              &lt;script setup&gt;
+            
               &lt;/script&gt;
             </code>
           </pre>

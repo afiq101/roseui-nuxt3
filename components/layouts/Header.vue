@@ -106,7 +106,7 @@ function toggleSearch() {
           <VDropdown placement="bottom-end" distance="13" name="notification">
             <button class="relative icon-btn h-10 w-10 rounded-full">
               <span
-                class="w-3 h-3 absolute top-1 right-2 rounded-full bg-primary-400"
+                class="w-3 h-3 absolute top-1 right-2 rounded-full bg-primary"
               ></span>
               <Icon name="ic:round-notifications-none" class="" />
             </button>
@@ -115,7 +115,7 @@ function toggleSearch() {
                 <li class="d-head flex items-center justify-between py-2 px-4">
                   <span class="font-semibold">Notification</span>
                   <div
-                    class="flex items-center text-primary-400 cursor-pointer hover:underline"
+                    class="flex items-center text-primary cursor-pointer hover:underline"
                   >
                     <a class="ml-2">View All</a>
                   </div>
@@ -129,7 +129,7 @@ function toggleSearch() {
                       <div class="flex items-center">
                         <Icon
                           name="ic:outline-circle"
-                          class="text-primary-400 flex-none"
+                          class="text-primary flex-none"
                         />
                         <span class="mx-2"
                           >Terdapat Satu Pembayaran yang berlaku menggunakan bil
@@ -148,7 +148,7 @@ function toggleSearch() {
                       <div class="flex items-center">
                         <Icon
                           name="ic:outline-circle"
-                          class="text-primary-400 flex-none"
+                          class="text-primary flex-none"
                         />
                         <span class="mx-2"
                           >Terdapat Satu Pembayaran yang berlaku menggunakan bil

@@ -18,13 +18,12 @@ definePageMeta({
         <div class="grid grid-cols-1">
           <FormKit label="Email" type="email" outer-class="text-left" />
           <NuxtLink to="/auth/reset-password-v2">
-            >
             <FormKit type="button" input-class="w-full">Validate Email</FormKit>
           </NuxtLink>
         </div>
         <p class="mt-3 text-center text-slate-500">
           Already have an account?
-          <NuxtLink to="/auth/login-v2" class="text-primary-400 hover:underline"
+          <NuxtLink to="/auth/login-v2" class="text-primary hover:underline"
             >Login</NuxtLink
           >
         </p>

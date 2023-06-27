@@ -21,7 +21,7 @@ definePageMeta({
           </p>
           <NuxtLink to="/">
             <button
-              class="inline-block align-middle md:align-baseline w-full md:w-fit mt-7 md:mt-4 px-4 py-3 rounded-lg shadow-lg shadow-primary-500/30 text-white bg-primary-400 hover:bg-primary-500"
+              class="inline-block align-middle md:align-baseline w-full md:w-fit mt-7 md:mt-4 px-4 py-3 rounded-lg shadow-lg shadow-primary/30 text-white bg-primary hover:bg-primary/90"
             >
               Back to Home
             </button>
