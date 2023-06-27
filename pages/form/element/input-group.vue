@@ -259,11 +259,9 @@ const computedKey = computed(() => {
               <SimpleBar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
-              &lt;rs-fieldset&gt;
-                &lt;template&gt;
+              &lt;rs-fieldset  label="Group Input"&gt;
                   &lt;FormKit type="text" label="Text 1" /&gt;
                   &lt;FormKit type="text" label="Text 2" /&gt;
-                &lt;/template&gt;
               &lt;/rs-fieldset&gt;
 
               &lt;script setup&gt;
