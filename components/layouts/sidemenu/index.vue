@@ -34,11 +34,7 @@ onMounted(() => {
     <div class="py-2 px-4">
       <nuxt-link to="/">
         <div class="flex flex-auto gap-3 justify-center items-center h-[48px]">
-          <img
-            class="h-10 block"
-            src="@/assets/img/logo/logo.png"
-            alt=""
-          />
+          <img class="h-10 block" src="@/assets/img/logo/logo.png" alt="" />
           <span class="text-xl font-semibold text-primary dark:text-white"
             >Rose UI</span
           >
@@ -46,26 +42,9 @@ onMounted(() => {
       </nuxt-link>
     </div>
     <div class="flex flex-col justify-between my-6 max-h-[85vh]">
-      <perfect-scrollbar style="max-height: 100vh">
+      <perfect-scrollbar style="max-height: 100dvh">
         <RSItem :items="menuItem"></RSItem>
       </perfect-scrollbar>
     </div>
-    <!-- <div class="m-6 text-sm">
-      To see documentation visit
-      <a
-        class="text-primary hover:underline"
-        href="https://mawar-cms-docs.vercel.app/"
-        target="_blank"
-        >mawar-cms-docs.vercel.app
-      </a>
-      To see ui components visit
-      <a
-        class="text-primary hover:underline"
-        href="https://roseui-nuxt.vercel.app/"
-        target="_blank"
-      >
-        roseui-nuxt.vercel.app
-      </a>
-    </div> -->
   </div>
 </template>
