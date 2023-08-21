@@ -48,7 +48,7 @@ const resetAlert = () => {
         <ClientOnly>
           <transition name="fade">
             <div v-show="showCode" v-highlight>
-              <SimpleBar style="height: 400px">
+              <perfect-scrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -62,7 +62,7 @@ const resetAlert = () => {
               &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -115,7 +115,7 @@ const resetAlert = () => {
         <ClientOnly>
           <transition name="fade">
             <div v-show="showCode2" v-highlight>
-              <SimpleBar style="height: 400px">
+              <perfect-scrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -125,7 +125,7 @@ const resetAlert = () => {
               &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>

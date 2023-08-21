@@ -7,9 +7,7 @@ definePageMeta({
 
 <template>
   <div class="flex-none lg:flex justify-center h-screen">
-    <div
-      class="flex-auto w-full md:w-full lg:w-5/12 bg-white dark:bg-slate-800"
-    >
+    <div class="flex-auto w-full md:w-full lg:w-5/12 bg-[rgb(var(--bg-2))]">
       <div
         class="flex h-screen items-start md:items-center justify-start md:justify-center"
       >
@@ -18,9 +16,7 @@ definePageMeta({
             <!-- <img class="w-10 mb-6" src="@/assets/img/logo/logo.svg" /> -->
           </div>
           <h3 class="mb-5">Reset Password</h3>
-          <p class="text-slate-500 mb-5">
-            Please fill in the form to reset your password.
-          </p>
+          <p class="mb-5">Please fill in the form to reset your password.</p>
           <div class="grid grid-cols-1">
             <FormKit label="Email" type="email" />
             <FormKit label="Password" type="password" />

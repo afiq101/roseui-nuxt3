@@ -56,7 +56,7 @@ const dropdownItems = [
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode1" v-highlight>
-              <SimpleBar style="height: 400px">
+              <perfect-scrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -75,7 +75,7 @@ const dropdownItems = [
               &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -129,7 +129,7 @@ const dropdownItems = [
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode2" v-highlight>
-              <SimpleBar style="height: 400px">
+              <perfect-scrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -163,7 +163,7 @@ const dropdownItems = [
               &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -183,7 +183,7 @@ const dropdownItems = [
         <!-- Fill Button -->
         <div class="my-6">
           <div
-            class="font-semibold text-lg bg-slate-100 dark:bg-slate-700 w-full mb-4 pl-2"
+            class="font-semibold text-lg bg-[rgb(var(--bg-1))] w-full mb-4 pl-2"
           >
             Fill
           </div>
@@ -219,7 +219,7 @@ const dropdownItems = [
         <!-- Outline Button -->
         <div class="my-6">
           <div
-            class="font-semibold text-lg bg-slate-100 dark:bg-slate-700 w-full mb-4 pl-2"
+            class="font-semibold text-lg bg-[rgb(var(--bg-1))] w-full mb-4 pl-2"
           >
             Outline
           </div>
@@ -255,7 +255,7 @@ const dropdownItems = [
         <!-- Text Button -->
         <div class="my-6">
           <div
-            class="font-semibold text-lg bg-slate-100 dark:bg-slate-700 w-full mb-4 pl-2"
+            class="font-semibold text-lg bg-[rgb(var(--bg-1))] w-full mb-4 pl-2"
           >
             Text
           </div>
@@ -298,7 +298,7 @@ const dropdownItems = [
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode3" v-highlight>
-              <SimpleBar style="height: 400px">
+              <perfect-scrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -387,7 +387,7 @@ const dropdownItems = [
               &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -435,7 +435,7 @@ const dropdownItems = [
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode4" v-highlight>
-              <SimpleBar style="height: 400px">
+              <perfect-scrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -464,7 +464,7 @@ const dropdownItems = [
               &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -504,7 +504,7 @@ const dropdownItems = [
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode5" v-highlight>
-              <SimpleBar style="height: 400px">
+              <perfect-scrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -528,7 +528,7 @@ const dropdownItems = [
               &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>

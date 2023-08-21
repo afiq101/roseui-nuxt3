@@ -396,11 +396,11 @@ onMounted(() => {
             <div
               v-for="(val, index) in customers"
               :key="index"
-              class="flex justify-between items-center rounded-lg bg-gray-100 dark:bg-slate-700 p-5 first:mt-0 mt-3"
+              class="flex justify-between items-center rounded-lg bg-[rgb(var(--bg-1))] p-5 first:mt-0 mt-3"
             >
               <div class="flex items-center gap-x-4">
                 <img
-                  :src="`https://avatars.dicebear.com/api/adventurer-neutral/${val.name}.svg`"
+                  src="@/assets/img/avatar/user.webp"
                   class="h-10 w-10 rounded-lg"
                 />
                 <div class="flex-1">
@@ -419,7 +419,7 @@ onMounted(() => {
               </div>
               <div>
                 <button
-                  class="flex items-center p-4 rounded-full bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-900 shadow-md"
+                  class="flex items-center p-4 rounded-full bg-[rgb(var(--bg-2))] hover:bg-[rgb(var(--bg-2))]/10 shadow-md"
                 >
                   <Icon size="20px" name="ic:baseline-mail-outline"></Icon>
                 </button>
@@ -455,9 +455,7 @@ onMounted(() => {
               :key="index"
             >
               <img
-                :src="`https://picsum.photos/id/${Math.round(
-                  Math.random() * 100
-                )}/200/300`"
+                src="@/assets/img/avatar/user.webp"
                 class="h-20 w-20 object-cover rounded-lg"
               />
               <div class="flex-1 flex items-center">

@@ -165,7 +165,7 @@ onMounted(() => {
           <ClientOnly>
             <transition name="fade">
               <div class="z-0" v-show="showCode1" v-highlight>
-                <SimpleBar style="height: 400px">
+                <perfect-scrollbar style="height: 400px">
                   <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -234,7 +234,7 @@ onMounted(() => {
               &lt;/script&gt;
             </code>
           </pre>
-                </SimpleBar>
+                </perfect-scrollbar>
               </div>
             </transition>
           </ClientOnly>
@@ -266,7 +266,7 @@ onMounted(() => {
           <ClientOnly>
             <transition name="fade">
               <div class="z-0" v-show="showCode2" v-highlight>
-                <SimpleBar style="height: 400px">
+                <perfect-scrollbar style="height: 400px">
                   <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -332,7 +332,7 @@ onMounted(() => {
               &lt;/script&gt;
             </code>
           </pre>
-                </SimpleBar>
+                </perfect-scrollbar>
               </div>
             </transition>
           </ClientOnly>
@@ -365,7 +365,7 @@ onMounted(() => {
           <ClientOnly>
             <transition name="fade">
               <div class="z-0" v-show="showCode3" v-highlight>
-                <SimpleBar style="height: 400px">
+                <perfect-scrollbar style="height: 400px">
                   <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -434,7 +434,7 @@ onMounted(() => {
               &lt;/script&gt;
             </code>
           </pre>
-                </SimpleBar>
+                </perfect-scrollbar>
               </div>
             </transition>
           </ClientOnly>
@@ -467,7 +467,7 @@ onMounted(() => {
           <ClientOnly>
             <transition name="fade">
               <div class="z-0" v-show="showCode4" v-highlight>
-                <SimpleBar style="height: 400px">
+                <perfect-scrollbar style="height: 400px">
                   <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -523,7 +523,7 @@ onMounted(() => {
               &lt;/script&gt;
             </code>
           </pre>
-                </SimpleBar>
+                </perfect-scrollbar>
               </div>
             </transition>
           </ClientOnly>
@@ -556,7 +556,7 @@ onMounted(() => {
           <ClientOnly>
             <transition name="fade">
               <div class="z-0" v-show="showCode5" v-highlight>
-                <SimpleBar style="height: 400px">
+                <perfect-scrollbar style="height: 400px">
                   <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -612,7 +612,7 @@ onMounted(() => {
               &lt;/script&gt;
             </code>
           </pre>
-                </SimpleBar>
+                </perfect-scrollbar>
               </div>
             </transition>
           </ClientOnly>
@@ -645,7 +645,7 @@ onMounted(() => {
           <ClientOnly>
             <transition name="fade">
               <div class="z-0" v-show="showCode6" v-highlight>
-                <SimpleBar style="height: 400px">
+                <perfect-scrollbar style="height: 400px">
                   <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -714,7 +714,7 @@ onMounted(() => {
               &lt;/script&gt;
             </code>
           </pre>
-                </SimpleBar>
+                </perfect-scrollbar>
               </div>
             </transition>
           </ClientOnly>
@@ -747,7 +747,7 @@ onMounted(() => {
           <ClientOnly>
             <transition name="fade">
               <div class="z-0" v-show="showCode7" v-highlight>
-                <SimpleBar style="height: 400px">
+                <perfect-scrollbar style="height: 400px">
                   <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -816,7 +816,7 @@ onMounted(() => {
               &lt;/script&gt;
             </code>
           </pre>
-                </SimpleBar>
+                </perfect-scrollbar>
               </div>
             </transition>
           </ClientOnly>
@@ -849,7 +849,7 @@ onMounted(() => {
           <ClientOnly>
             <transition name="fade">
               <div class="z-0" v-show="showCode8" v-highlight>
-                <SimpleBar style="height: 400px">
+                <perfect-scrollbar style="height: 400px">
                   <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -926,7 +926,7 @@ onMounted(() => {
               &lt;/script&gt;
             </code>
           </pre>
-                </SimpleBar>
+                </perfect-scrollbar>
               </div>
             </transition>
           </ClientOnly>

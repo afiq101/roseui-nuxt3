@@ -15,9 +15,15 @@ const showCode1 = ref(false);
       <template #body>
         <rs-table
           :data="data"
+          :options="{
+            variant: 'default',
+            striped: true,
+            borderless: true,
+          }"
           :options-advanced="{
             sortable: true,
             responsive: true,
+            filterable: false,
           }"
           advanced
         >
@@ -52,9 +58,15 @@ const showCode1 = ref(false);
               &lt;template&gt;
                 &lt;rs-table
                   :data="data"
+                  :options="{
+                    variant: 'default',
+                    striped: true,
+                    borderless: true,
+                  }"
                   :options-advanced="{
                     sortable: true,
                     responsive: true,
+                    filterable: false,
                   }"
                   advanced
                 &gt;

@@ -8,15 +8,10 @@ const showCode1 = ref(false);
 const showCode2 = ref(false);
 const showCode3 = ref(false);
 
-const date = ref();
-const range = ref();
-
-onMounted(() => {
-  date.value = DateTime.now();
-  range.value = {
-    start: DateTime.local(2022, 6, 6),
-    end: DateTime.local(2022, 6, 20),
-  };
+const date = ref(DateTime.now());
+const range = ref({
+  start: DateTime.local(2022, 6, 6),
+  end: DateTime.local(2022, 6, 20),
 });
 </script>
 
@@ -51,9 +46,8 @@ onMounted(() => {
           single date. It is a good way to select a date for a datepicker.
         </p>
         <div class="flex flex-col justify-center items-center">
-          <ClientOnly>
-            <v-date-picker v-model="date" />
-          </ClientOnly>
+          <v-date-picker v-model="date" />
+
           <p class="py-2">
             <span class="font-semibold">Date:</span>
             {{ date }}
@@ -70,7 +64,7 @@ onMounted(() => {
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode1" v-highlight>
-              <SimpleBar style="height: 400px">
+              <perfect-scrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt;
@@ -82,15 +76,11 @@ onMounted(() => {
               &lt;script setup&gt;
                 import { DateTime } from "luxon";
     
-                const date = ref();
-    
-                onMounted(() => {
-                  date.value = DateTime.now();
-                });
+                const date = ref(DateTime.now());
               &lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -104,9 +94,7 @@ onMounted(() => {
           range.
         </p>
         <div class="flex flex-col justify-center items-center">
-          <ClientOnly>
-            <v-date-picker v-model="range" is-range />
-          </ClientOnly>
+          <v-date-picker v-model="range" is-range />
           <p class="py-2">
             <span class="font-semibold">Date:</span>
             {{ range }}
@@ -123,7 +111,7 @@ onMounted(() => {
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode2" v-highlight>
-              <SimpleBar style="height: 400px">
+              <perfect-scrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt;
@@ -135,18 +123,14 @@ onMounted(() => {
               &lt;script setup&gt;
                 import { DateTime } from "luxon";
     
-                const range = ref();
-    
-                onMounted(() => {
-                  range.value = {
-                    start: DateTime.local(2022, 6, 6),
-                    end: DateTime.local(2022, 6, 20),
-                  };
+                const range = ref({
+                  start: DateTime.local(2022, 6, 6),
+                  end: DateTime.local(2022, 6, 20),
                 });
               &lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -160,9 +144,7 @@ onMounted(() => {
           and time.
         </p>
         <div class="flex flex-col justify-center items-center">
-          <ClientOnly>
-            <v-date-picker v-model="date" mode="dateTime" />
-          </ClientOnly>
+          <v-date-picker v-model="date" mode="dateTime" />
           <p class="py-2">
             <span class="font-semibold">Date:</span>
             {{ date }}
@@ -179,7 +161,7 @@ onMounted(() => {
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode3" v-highlight>
-              <SimpleBar style="height: 400px">
+              <perfect-scrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt;
@@ -191,15 +173,11 @@ onMounted(() => {
               &lt;script setup&gt;
                 import { DateTime } from "luxon";
     
-                const date = ref();
-    
-                onMounted(() => {
-                  date.value = DateTime.now();
-                });
+                const date = ref(DateTime.now());
               &lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>

@@ -2,15 +2,31 @@
 useHead({
   title: "RoseUI - NuxtJS Admin Dashboard Template",
   description: "Home page",
-  bodyAttrs: {
-    class: "bg-gray-100 dark:bg-slate-900 text-gray-600 dark:text-gray-300",
+  htmlAttrs: {
+    lang: "en",
   },
+});
+
+const loading = ref(true);
+
+onMounted(() => {
+  // Hide loading indicator if not hydrating
+  setTimeout(() => {
+    loading.value = false;
+  }, 1000);
+
+  // Get theme from localStorage
+  let theme = localStorage.getItem("theme") || "rose";
+  document.documentElement.setAttribute("data-theme", theme);
 });
 </script>
 
 <template>
-  <NuxtLayout>
+  <div>
     <NuxtLoadingIndicator />
-    <NuxtPage />
-  </NuxtLayout>
+    <NuxtLayout>
+      <Loading v-if="loading" />
+      <NuxtPage :key="$route.fullPath" v-else />
+    </NuxtLayout>
+  </div>
 </template>

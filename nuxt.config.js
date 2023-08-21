@@ -2,12 +2,14 @@
 export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
-    "@nuxtjs/color-mode",
-    "@pinia/nuxt",
     "@formkit/nuxt",
+    "@vueuse/nuxt",
+    "floating-vue/nuxt",
+    "@pinia/nuxt",
+    "@pinia-plugin-persistedstate/nuxt",
+    "nuxt-typed-router",
     "nuxt-icon",
   ],
-  buildModules: ["@nuxtjs/pwa", "floating-vue/nuxt"],
   app: {
     pageTransition: { name: "page", mode: "out-in" },
   },
@@ -24,26 +26,13 @@ export default defineNuxtConfig({
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
-  pwa: {
-    icon: false, // disables the icon module
-    manifest: {
-      name: "MawarCMS",
-      lang: "en",
-      useWebmanifestExtension: false,
-    },
-  },
   tailwindcss: {
     cssPath: "~/assets/style/css/tailwind.css",
     configPath: "tailwind.config",
     exposeConfig: false,
     config: {},
     injectPosition: 0,
-    viewer: true,
-  },
-  colorMode: {
-    preference: "system", // default value of $colorMode.preference
-    fallback: "light", // fallback value if not system preference found
-    classSuffix: "",
+    viewer: false,
   },
   css: ["~/assets/style/scss/main.scss"],
   formkit: {

@@ -135,9 +135,7 @@ const formatSold = (n) => {
                     v-for="(val, index) in product.attributes"
                     :key="index"
                   >
-                    <span class="font-normal text-gray"
-                      >{{ val.name }}:
-                    </span>
+                    <span class="font-normal text-gray">{{ val.name }}: </span>
                     <span>{{ val.value }}</span>
                   </li>
                 </ul>
@@ -147,7 +145,7 @@ const formatSold = (n) => {
         </div>
       </div>
       <div
-        class="item-features py-14 md:py-20 bg-gray-50 dark:bg-gray-700 grid md:grid-cols-3"
+        class="item-features py-14 md:py-20 bg-[rgb(var(--bg-1))] grid md:grid-cols-3"
       >
         <div
           class="flex flex-col items-center justify-center px-4 my-4 md:my-0"
@@ -162,11 +160,7 @@ const formatSold = (n) => {
         <div
           class="flex flex-col items-center justify-center px-4 my-4 md:my-0"
         >
-          <Icon
-            size="1.75rem"
-            class="text-primary"
-            name="ph:lightning"
-          ></Icon>
+          <Icon size="1.75rem" class="text-primary" name="ph:lightning"></Icon>
           <span class="text-lg font-semibold my-2">Fast Delivery</span>
           <p class="text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

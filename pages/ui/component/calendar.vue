@@ -1,4 +1,6 @@
 <script setup>
+import { DateTime } from "luxon";
+
 const { $FullCalendar } = useNuxtApp();
 const FullCalendar = $FullCalendar;
 definePageMeta({
@@ -13,6 +15,17 @@ const changeKey = ref(0);
 const handleDateClick = (arg) => {
   // alert("date click! " + arg.dateStr);
 };
+
+// get current date YYYY-MM-DD
+const startDate = DateTime.now().toISODate();
+const endDate = DateTime.now().plus({ days: 4 }).toISODate();
+
+// get date plus 3 days
+const datePlus3 = DateTime.now().plus({ days: 6 }).toISODate();
+
+console.log("startDate", startDate);
+console.log("endDate", endDate);
+console.log("datePlus3", datePlus3);
 
 const events = [
   {
@@ -35,13 +48,13 @@ calendarOptions.value = {
   dayMaxEvents: 2,
   navLinks: true,
   events: [
-    { title: "event 1", start: "2022-07-05", end: "2022-07-08" },
-    { title: "event 2", start: "2022-07-05", end: "2022-07-08" },
-    { title: "event 3", start: "2022-07-05", end: "2022-07-08" },
-    { title: "event 3", start: "2022-07-05", end: "2022-07-08" },
-    { title: "event 3", start: "2022-07-05", end: "2022-07-08" },
-    { title: "event 3", start: "2022-07-05", end: "2022-07-08" },
-    { title: "event 4", date: "2022-07-22" },
+    { title: "event 1", start: startDate, end: endDate },
+    { title: "event 2", start: startDate, end: endDate },
+    { title: "event 3", start: startDate, end: endDate },
+    { title: "event 3", start: startDate, end: endDate },
+    { title: "event 3", start: startDate, end: endDate },
+    { title: "event 3", start: startDate, end: endDate },
+    { title: "event 4", date: datePlus3 },
   ],
 };
 
@@ -99,7 +112,7 @@ onMounted(() => {
         <ClientOnly>
           <transition name="fade">
             <div v-show="showCode1" v-highlight>
-              <SimpleBar style="height: 400px">
+              <perfect-scrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -143,7 +156,7 @@ onMounted(() => {
               &lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>

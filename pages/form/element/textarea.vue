@@ -30,7 +30,7 @@ const showCode3 = ref(false);
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode1" v-highlight>
-              <SimpleBar style="height: 200px">
+              <perfect-scrollbar style="height: 200px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt;
@@ -40,7 +40,7 @@ const showCode3 = ref(false);
               &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -70,7 +70,7 @@ const showCode3 = ref(false);
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode2" v-highlight>
-              <SimpleBar style="height: 200px">
+              <perfect-scrollbar style="height: 200px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt;
@@ -80,7 +80,7 @@ const showCode3 = ref(false);
               &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -106,7 +106,7 @@ const showCode3 = ref(false);
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode3" v-highlight>
-              <SimpleBar style="height: 200px">
+              <perfect-scrollbar style="height: 200px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt;
@@ -116,7 +116,7 @@ const showCode3 = ref(false);
               &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>

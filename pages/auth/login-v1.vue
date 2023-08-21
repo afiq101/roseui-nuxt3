@@ -7,9 +7,7 @@ definePageMeta({
 
 <template>
   <div class="flex-none lg:flex justify-center h-screen">
-    <div
-      class="flex-auto w-full md:w-full lg:w-5/12 bg-white dark:bg-slate-800"
-    >
+    <div class="flex-auto w-full md:w-full lg:w-5/12 bg-[rgb(var(--bg-2))]">
       <div
         class="flex h-screen items-start md:items-center justify-start md:justify-center"
       >
@@ -18,9 +16,7 @@ definePageMeta({
             <!-- <img class="w-10 mb-6" src="@/assets/img/logo/logo.svg" /> -->
           </div>
           <h3 class="mb-5">Login</h3>
-          <p class="text-slate-500 mb-5">
-            Welcome to Rose UI. Please login to continue.
-          </p>
+          <p class="mb-5">Welcome to Rose UI. Please login to continue.</p>
           <div class="grid grid-cols-2">
             <FormKit label="Username" type="text" outer-class="col-span-2" />
             <FormKit
@@ -42,18 +38,14 @@ definePageMeta({
             <NuxtLink to="/" class="col-span-2">
               <FormKit type="button" input-class="w-full"> Sign In </FormKit>
             </NuxtLink>
-            <FormKit
-              type="button"
-              outer-class="col-span-2"
-              input-class="w-full btn-white"
+            <rs-button
+              class="w-full col-span-2 !bg-[rgb(var(--bg-1))] !text-inherit shadow-md"
             >
-              <div class="flex items-center justify-center gap-3">
-                <img class="w-5" src="@/assets/img/brand/google-logo.svg" />
-                Sign In with Google
-              </div>
-            </FormKit>
+              <img class="w-5 mr-2" src="@/assets/img/brand/google-logo.svg" />
+              Sign In with Google
+            </rs-button>
           </div>
-          <p class="mt-3 text-center text-slate-500">
+          <p class="mt-3 text-center">
             Don't have an account?
             <NuxtLink
               to="/auth/register-v1"

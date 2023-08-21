@@ -31,7 +31,7 @@ const computedKey = computed(() => {
         <!-- Prefix with button text -->
         <FormKit type="text" placeholder="1.00">
           <template #prefix>
-            <div class="bg-slate-100 dark:bg-slate-700 h-full rounded-l-md p-3">
+            <div class="bg-[rgb(var(--bg-1))] h-full rounded-l-md p-3">
               RM
             </div>
           </template>
@@ -71,7 +71,7 @@ const computedKey = computed(() => {
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode1" v-highlight>
-              <SimpleBar style="height: 400px">
+              <perfect-scrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt;
@@ -83,7 +83,7 @@ const computedKey = computed(() => {
                 &lt;!-- Prefix with button text --&gt;
                 &lt;FormKit type="text" placeholder="1.00"&gt;
                   &lt;template #prefix&gt;
-                    &lt;div class="bg-slate-100 dark:bg-slate-700 h-full rounded-l-md p-3"&gt;
+                    &lt;div class="bg-[rgb(var(--bg-1))] h-full rounded-l-md p-3"&gt;
                       RM
                     &lt;/div&gt;
                   &lt;/template&gt;
@@ -122,7 +122,7 @@ const computedKey = computed(() => {
               &lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -140,7 +140,7 @@ const computedKey = computed(() => {
         <!-- Prefix with button text -->
         <FormKit type="text" placeholder="1.00">
           <template #suffix>
-            <div class="bg-slate-100 dark:bg-slate-700 h-full rounded-r-md p-3">
+            <div class="bg-[rgb(var(--bg-1))] h-full rounded-r-md p-3">
               Kg
             </div>
           </template>
@@ -180,7 +180,7 @@ const computedKey = computed(() => {
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode2" v-highlight>
-              <SimpleBar style="height: 400px">
+              <perfect-scrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt;
@@ -192,7 +192,7 @@ const computedKey = computed(() => {
                 &lt;!-- Suffix with button text --&gt;
                 &lt;FormKit type="text" placeholder="1.00"&gt;
                   &lt;template #suffix&gt;
-                    &lt;div class="bg-slate-100 dark:bg-slate-700 h-full rounded-r-md p-3"&gt;
+                    &lt;div class="bg-[rgb(var(--bg-1))] h-full rounded-r-md p-3"&gt;
                       RM
                     &lt;/div&gt;
                   &lt;/template&gt;
@@ -231,7 +231,7 @@ const computedKey = computed(() => {
               &lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -256,7 +256,7 @@ const computedKey = computed(() => {
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode3" v-highlight>
-              <SimpleBar style="height: 400px">
+              <perfect-scrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;rs-fieldset  label="Group Input"&gt;
@@ -269,7 +269,7 @@ const computedKey = computed(() => {
               &lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>

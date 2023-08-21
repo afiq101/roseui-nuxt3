@@ -4,7 +4,7 @@ definePageMeta({
 });
 const defaultColor = {
   primary: ["bg-primary", "text-white"],
-  secondary: ["bg-secondary-400", "text-white"],
+  secondary: ["bg-secondary", "text-white"],
   info: ["bg-info", "text-white"],
   success: ["bg-success", "text-white"],
   warning: ["bg-warning", "text-white"],
@@ -31,12 +31,12 @@ const color = {
     "bg-gray-100",
     "bg-gray-200",
     "bg-gray-300",
-    "bg-secondary",
+    "bg-gray-400",
     "bg-gray-500",
     "bg-gray-600",
     "bg-gray-700",
-    "bg-slate-800",
-    "bg-slate-900",
+    "bg-gray-800",
+    "bg-gray-900",
   ],
   zinc: [
     "bg-zinc-50",
@@ -47,8 +47,8 @@ const color = {
     "bg-zinc-500",
     "bg-zinc-600",
     "bg-zinc-700",
-    "bg-slate-800",
-    "bg-slate-900",
+    "bg-zinc-800",
+    "bg-zinc-900",
   ],
   neutral: [
     "bg-neutral-50",
@@ -59,8 +59,8 @@ const color = {
     "bg-neutral-500",
     "bg-neutral-600",
     "bg-neutral-700",
-    "bg-slate-800",
-    "bg-slate-900",
+    "bg-neutral-800",
+    "bg-neutral-900",
   ],
   stone: [
     "bg-stone-50",
@@ -79,7 +79,7 @@ const color = {
     "bg-red-100",
     "bg-red-200",
     "bg-red-300",
-    "bg-danger",
+    "bg-red-400",
     "bg-red-500",
     "bg-red-600",
     "bg-red-700",
@@ -91,7 +91,7 @@ const color = {
     "bg-orange-100",
     "bg-orange-200",
     "bg-orange-300",
-    "bg-warning",
+    "bg-orange-300",
     "bg-orange-500",
     "bg-orange-600",
     "bg-orange-700",
@@ -115,7 +115,7 @@ const color = {
     "bg-green-100",
     "bg-green-200",
     "bg-green-300",
-    "bg-success",
+    "bg-green-300",
     "bg-green-500",
     "bg-green-600",
     "bg-green-700",
@@ -139,7 +139,7 @@ const color = {
     "bg-blue-100",
     "bg-blue-200",
     "bg-blue-300",
-    "bg-info",
+    "bg-blue-300",
     "bg-blue-500",
     "bg-blue-600",
     "bg-blue-700",
@@ -261,7 +261,7 @@ const color = {
         </p>
         <client-only>
           <table class="w-full text-center mb-4">
-            <tr class="bg-slate-100 dark:bg-slate-700 text-lg">
+            <tr class="bg-[rgb(var(--bg-1))] text-lg">
               <th class="p-2">Category</th>
               <th class="p-2">Suffix</th>
             </tr>

@@ -72,7 +72,7 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
         <ClientOnly>
           <transition name="fade">
             <div v-show="showCode1" v-highlight>
-              <SimpleBar style="height: 400px">
+              <perfect-scrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -98,7 +98,7 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
               &lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>

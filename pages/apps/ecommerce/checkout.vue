@@ -20,12 +20,12 @@ const formatPrice = (price) => {
 
     <rs-card>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="py-7 bg-white dark:bg-slate-800 rounded-l-lg">
+        <div class="py-7 bg-[rgb(var(--bg-2))] rounded-l-lg">
           <div class="px-10">
             <h5>Summary Order</h5>
             <p>This is a list of items in the cart.</p>
           </div>
-          <SimpleBar class="mt-7 px-10" style="height: 350px">
+          <perfect-scrollbar class="mt-7 px-10" style="height: 350px">
             <rs-card class="p-5" v-for="(product, index) in data" :key="index">
               <div class="flex flex-col md:flex-row gap-4">
                 <div class="product-img flex items-center w-30 h-30">
@@ -53,7 +53,7 @@ const formatPrice = (price) => {
                 </div>
               </div>
             </rs-card>
-          </SimpleBar>
+          </perfect-scrollbar>
           <div class="mt-7 px-10">
             <span class="font-semibold">Address</span>
             <rs-card class="mt-7 p-5 text-white !bg-primary">
@@ -72,14 +72,14 @@ const formatPrice = (price) => {
             </rs-card>
           </div>
         </div>
-        <div class="py-7 bg-gray-50 dark:bg-slate-700 rounded-r-lg">
+        <div class="py-7 bg-[rgb(var(--bg-2))] rounded-r-lg border-l border-l-[rgb(var(--border-color))]">
           <div class="px-10">
             <h5>Payment Details</h5>
             <p>Enter your payment details below.</p>
           </div>
           <div class="form-detail mt-7">
             <div
-              class="text-base font-semibold bg-gray-200 dark:bg-slate-600 py-3 px-10 my-4"
+              class="text-base font-semibold bg-[rgb(var(--bg-1))] py-3 px-10 my-4"
             >
               Customer Information
             </div>
@@ -103,7 +103,7 @@ const formatPrice = (price) => {
             </div>
 
             <div
-              class="text-base font-semibold bg-gray-200 dark:bg-slate-600 py-3 px-10 my-4"
+              class="text-base font-semibold bg-[rgb(var(--bg-1))] py-3 px-10 my-4"
             >
               Card Details
             </div>

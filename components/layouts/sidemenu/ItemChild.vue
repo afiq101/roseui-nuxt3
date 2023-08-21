@@ -10,7 +10,7 @@ const props = defineProps({
   },
   indent: {
     type: Number,
-    default: 0.1,
+    default: 0.2,
   },
 });
 const emit = defineEmits(["openMenu"]);
@@ -42,9 +42,7 @@ function activeMenu(routePath) {
 }
 
 const indentStyle = computed(() => {
-  if (theme == "dark")
-    return { "background-color": `rgba(18, 24, 37, ${indent.value})` };
-  else return { "background-color": `rgba(226, 232, 240, ${indent.value})` };
+  return { "background-color": `rgba(var(--bg-1), ${indent.value})` };
 });
 </script>
 

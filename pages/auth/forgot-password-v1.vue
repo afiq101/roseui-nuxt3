@@ -7,9 +7,7 @@ definePageMeta({
 
 <template>
   <div class="flex-none lg:flex justify-center h-screen">
-    <div
-      class="flex-auto w-full md:w-full lg:w-5/12 bg-white dark:bg-slate-800"
-    >
+    <div class="flex-auto w-full md:w-full lg:w-5/12 bg-[rgb(var(--bg-2))]">
       <div
         class="flex h-screen items-start md:items-center justify-start md:justify-center"
       >
@@ -18,7 +16,7 @@ definePageMeta({
             <!-- <img class="w-10 mb-6" src="@/assets/img/logo/logo.svg" /> -->
           </div>
           <h3 class="mb-5">Forgot Password</h3>
-          <p class="text-slate-500 mb-5">
+          <p class="mb-5">
             Please input the correct email to reset the password.
           </p>
           <div class="grid grid-cols-1">
@@ -29,11 +27,9 @@ definePageMeta({
               >
             </NuxtLink>
           </div>
-          <p class="mt-3 text-center text-slate-500">
+          <p class="mt-3 text-center">
             Already have an account?
-            <NuxtLink
-              to="/auth/login-v1"
-              class="text-primary hover:underline"
+            <NuxtLink to="/auth/login-v1" class="text-primary hover:underline"
               >Login</NuxtLink
             >
           </p>

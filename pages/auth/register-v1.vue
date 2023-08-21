@@ -7,9 +7,7 @@ definePageMeta({
 
 <template>
   <div class="flex-none lg:flex justify-center h-screen">
-    <div
-      class="flex-auto w-full md:w-full lg:w-5/12 bg-white dark:bg-slate-800"
-    >
+    <div class="flex-auto w-full md:w-full lg:w-5/12 bg-[rgb(var(--bg-2))]">
       <div
         class="flex h-screen items-start md:items-center justify-start md:justify-center"
       >
@@ -18,9 +16,7 @@ definePageMeta({
             <!-- <img class="w-10 mb-6" src="@/assets/img/logo/logo.svg" /> -->
           </div>
           <h3 class="mb-5">Sign Up</h3>
-          <p class="text-slate-500 mb-5">
-            Please fill in the form to create an account.
-          </p>
+          <p class="mb-5">Please fill in the form to create an account.</p>
           <div class="grid grid-cols-1">
             <FormKit label="Username" type="text" />
             <FormKit label="Email" type="email" />
@@ -29,7 +25,7 @@ definePageMeta({
             <FormKit type="checkbox" label="agreement">
               <template #label
                 >I agree to the
-                <a class="text-primary hover:underline ml-1"
+                <a class="text-secondary hover:underline ml-1"
                   >Term and Services</a
                 >
               </template>
@@ -39,11 +35,9 @@ definePageMeta({
               <FormKit type="button" input-class="w-full">Sign up</FormKit>
             </NuxtLink>
           </div>
-          <p class="mt-3 text-center text-slate-500">
+          <p class="mt-3 text-center">
             Already have an account?
-            <NuxtLink
-              to="/auth/login-v1"
-              class="text-primary hover:underline"
+            <NuxtLink to="/auth/login-v1" class="text-primary hover:underline"
               >Login</NuxtLink
             >
           </p>

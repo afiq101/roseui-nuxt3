@@ -67,7 +67,6 @@ const data = [
           :options="{
             variant: 'default',
             striped: true,
-            bordered: true,
             borderless: true,
             hover: true,
             fixed: false,
@@ -86,22 +85,21 @@ const data = [
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode1" v-highlight>
-              <SimpleBar style="height: 400px">
+              <perfect-scrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt;
                 &lt;rs-table
-                  :field="field"
-                  :data="data"
-                  :options="{
-                    variant: 'default',
-                    striped: true,
-                    bordered: true,
-                    borderless: true,
-                    hover: true,
-                    fixed: false,
-                  }"
-                  basic
+                :field="field"
+                :data="data"
+                :options="{
+                  variant: 'default',
+                  striped: true,
+                  borderless: true,
+                  hover: true,
+                  fixed: false,
+                }"
+                basic
                 &gt;
                 &lt;/rs-table&gt;
               &lt;/template&gt;
@@ -143,7 +141,7 @@ const data = [
               &lt;/script&gt;
             </code>
           </pre>
-              </SimpleBar>
+              </perfect-scrollbar>
             </div>
           </transition>
         </ClientOnly>

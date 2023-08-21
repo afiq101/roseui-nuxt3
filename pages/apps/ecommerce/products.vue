@@ -2,7 +2,6 @@
 import products from "./data";
 import category from "./category";
 import { useLayoutStore } from "~/stores/layout";
-import { SimpleBar } from "simplebar-vue3";
 import { useWindowSize } from "vue-window-size";
 
 definePageMeta({
@@ -155,39 +154,31 @@ const pages = computed(() => {
       v-model="search"
       placeholder="Search for a products..."
       type="search"
-      inner-class="border-0 rounded-md shadow-md shadow-slate-200 dark:shadow-slate-900"
     />
     <!-- Filter n Categories -->
     <div class="filter-top-wrapper flex pb-4">
-      <button
-        class="flex items-center rounded-lg py-2 px-4 bg-white dark:bg-slate-800 dark:text-gray-300 hover:bg-slate-200 shadow-md shadow-slate-200 dark:shadow-slate-900"
+      <rs-button
         @click="showFilter ? (showFilter = false) : (showFilter = true)"
       >
         <Icon size="1.25rem" name="ic:outline-filter-alt"></Icon>
-      </button>
-      <SimpleBar style="width: 100%">
+      </rs-button>
+      <!-- <button
+        class="flex items-center rounded-lg py-2 px-4 bg-white dark:bg-slate-800 dark:text-gray-300 hover:bg-slate-200 shadow-md shadow-slate-200 dark:shadow-slate-900"
+      ></button> -->
+      <perfect-scrollbar style="width: 100%">
         <div class="category-wrapper flex gap-x-4 pl-4">
-          <button
-            class="flex items-center rounded-lg py-2 px-3 bg-white dark:bg-slate-800 dark:text-gray-300 hover:bg-slate-200 font-semibold text-sm shadow-md shadow-slate-200 dark:shadow-slate-900"
-            :class="{
-              'bg-gray-200': categorySelect === category.name,
-            }"
+          <rs-button
             @click="categorySelect = category.name"
+            :class="{
+              '!bg-secondary': categorySelect === category.name,
+            }"
             v-for="(category, index) in categories"
             :key="index"
           >
-            <div
-              class="flex items-center bg-slate-100 dark:bg-slate-700 border border-slate-200 dark:border-slate-700 w-10 h-10 rounded-lg mr-2"
-            >
-              <img
-                class="h-full w-full object-scale-down"
-                :src="category.image"
-              />
-            </div>
             <span>{{ category.name }}</span>
-          </button>
+          </rs-button>
         </div>
-      </SimpleBar>
+      </perfect-scrollbar>
     </div>
 
     <!-- Filter Content -->
@@ -261,7 +252,7 @@ const pages = computed(() => {
           :key="index"
           @click="navigateProductDetail(product.sku)"
         >
-          <div class="product-image relative h-50 rounded-lg">
+          <div class="product-image relative h-48 rounded-lg">
             <img
               class="object-scale-down w-full h-full"
               :src="product.images.length > 0 ? product.images[0] : ''"
@@ -277,10 +268,10 @@ const pages = computed(() => {
           </div>
           <div class="product-content-wrapper flex flex-col px-4 mb-4">
             <div class="product-title mt-4 h-12">
-              <span class="block text-base font-semibold line-clamp-1">{{
+              <span class="line-clamp-1 text-base font-semibold">{{
                 product.name
               }}</span>
-              <span class="text-gray-500 line-clamp-1 text-sm">
+              <span class="line-clamp-1 text-gray-500 text-sm">
                 {{ product.description }}
               </span>
             </div>
