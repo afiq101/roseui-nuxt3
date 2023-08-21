@@ -41,10 +41,11 @@ onMounted(() => {
         </div>
       </nuxt-link>
     </div>
-    <div class="flex flex-col justify-between my-6 max-h-[85vh]">
-      <perfect-scrollbar style="max-height: 100dvh">
-        <RSItem :items="menuItem"></RSItem>
-      </perfect-scrollbar>
-    </div>
+    <perfect-scrollbar
+      class="flex flex-col justify-between my-6"
+      style="max-height: 82dvh"
+    >
+      <RSItem :items="menuItem"></RSItem>
+    </perfect-scrollbar>
   </div>
 </template>
