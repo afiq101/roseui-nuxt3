@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     "@pinia-plugin-persistedstate/nuxt",
     "nuxt-typed-router",
     "nuxt-icon",
+    "@davestewart/nuxt-scrollbar",
   ],
   app: {
     pageTransition: { name: "page", mode: "out-in" },

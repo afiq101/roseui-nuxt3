@@ -112,7 +112,7 @@ onMounted(() => {
         <ClientOnly>
           <transition name="fade">
             <div v-show="showCode1" v-highlight>
-              <perfect-scrollbar style="height: 400px">
+              <NuxtScrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -156,7 +156,7 @@ onMounted(() => {
               &lt;/script&gt;
             </code>
           </pre>
-              </perfect-scrollbar>
+              </NuxtScrollbar>
             </div>
           </transition>
         </ClientOnly>

@@ -71,7 +71,7 @@ const computedKey = computed(() => {
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode1" v-highlight>
-              <perfect-scrollbar style="height: 400px">
+              <NuxtScrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt;
@@ -122,7 +122,7 @@ const computedKey = computed(() => {
               &lt;/script&gt;
             </code>
           </pre>
-              </perfect-scrollbar>
+              </NuxtScrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -180,7 +180,7 @@ const computedKey = computed(() => {
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode2" v-highlight>
-              <perfect-scrollbar style="height: 400px">
+              <NuxtScrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt;
@@ -231,7 +231,7 @@ const computedKey = computed(() => {
               &lt;/script&gt;
             </code>
           </pre>
-              </perfect-scrollbar>
+              </NuxtScrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -256,7 +256,7 @@ const computedKey = computed(() => {
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode3" v-highlight>
-              <perfect-scrollbar style="height: 400px">
+              <NuxtScrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;rs-fieldset  label="Group Input"&gt;
@@ -269,7 +269,7 @@ const computedKey = computed(() => {
               &lt;/script&gt;
             </code>
           </pre>
-              </perfect-scrollbar>
+              </NuxtScrollbar>
             </div>
           </transition>
         </ClientOnly>

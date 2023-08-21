@@ -165,7 +165,7 @@ const pages = computed(() => {
       <!-- <button
         class="flex items-center rounded-lg py-2 px-4 bg-white dark:bg-slate-800 dark:text-gray-300 hover:bg-slate-200 shadow-md shadow-slate-200 dark:shadow-slate-900"
       ></button> -->
-      <perfect-scrollbar style="width: 100%">
+      <NuxtScrollbar style="width: 100%">
         <div class="category-wrapper flex gap-x-4 pl-4">
           <rs-button
             @click="categorySelect = category.name"
@@ -178,7 +178,7 @@ const pages = computed(() => {
             <span>{{ category.name }}</span>
           </rs-button>
         </div>
-      </perfect-scrollbar>
+      </NuxtScrollbar>
     </div>
 
     <!-- Filter Content -->

@@ -49,7 +49,7 @@ const options2 = [
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode1" v-highlight>
-              <perfect-scrollbar style="height: 400px">
+              <NuxtScrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt;
@@ -67,7 +67,7 @@ const options2 = [
               &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
-              </perfect-scrollbar>
+              </NuxtScrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -94,7 +94,7 @@ const options2 = [
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode2" v-highlight>
-              <perfect-scrollbar style="height: 400px">
+              <NuxtScrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt;
@@ -111,7 +111,7 @@ const options2 = [
               &lt;/script&gt;
             </code>
           </pre>
-              </perfect-scrollbar>
+              </NuxtScrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -138,7 +138,7 @@ const options2 = [
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode3" v-highlight>
-              <perfect-scrollbar style="height: 400px">
+              <NuxtScrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt;
@@ -165,7 +165,7 @@ const options2 = [
               &lt;/script&gt;
             </code>
           </pre>
-              </perfect-scrollbar>
+              </NuxtScrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -193,7 +193,7 @@ const options2 = [
         <ClientOnly>
           <transition name="fade">
             <div class="z-0" v-show="showCode4" v-highlight>
-              <perfect-scrollbar style="height: 400px">
+              <NuxtScrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt;
@@ -212,7 +212,7 @@ const options2 = [
               &lt;/script&gt;
             </code>
           </pre>
-              </perfect-scrollbar>
+              </NuxtScrollbar>
             </div>
           </transition>
         </ClientOnly>

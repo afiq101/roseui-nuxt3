@@ -152,7 +152,7 @@ onMounted(() => {
                   <a class="ml-2">View All</a>
                 </div>
               </li>
-              <perfect-scrollbar>
+              <NuxtScrollbar>
                 <li>
                   <div class="bg-[rgb(var(--bg-1))] py-2 px-4">Today</div>
                   <a class="py-2 px-4 block">
@@ -193,7 +193,7 @@ onMounted(() => {
                     </div>
                   </a>
                 </li>
-              </perfect-scrollbar>
+              </NuxtScrollbar>
             </ul>
           </template>
         </VDropdown>

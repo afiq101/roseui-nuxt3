@@ -25,7 +25,7 @@ const formatPrice = (price) => {
             <h5>Summary Order</h5>
             <p>This is a list of items in the cart.</p>
           </div>
-          <perfect-scrollbar class="mt-7 px-10" style="height: 350px">
+          <NuxtScrollbar class="mt-7 px-10" style="height: 350px">
             <rs-card class="p-5" v-for="(product, index) in data" :key="index">
               <div class="flex flex-col md:flex-row gap-4">
                 <div class="product-img flex items-center w-30 h-30">
@@ -53,7 +53,7 @@ const formatPrice = (price) => {
                 </div>
               </div>
             </rs-card>
-          </perfect-scrollbar>
+          </NuxtScrollbar>
           <div class="mt-7 px-10">
             <span class="font-semibold">Address</span>
             <rs-card class="mt-7 p-5 text-white !bg-primary">

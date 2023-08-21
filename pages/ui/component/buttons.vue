@@ -29,7 +29,7 @@ const showCode4 = ref(false);
         <ClientOnly>
           <transition name="fade">
             <div v-show="showCode1" v-highlight>
-              <perfect-scrollbar style="height: 400px">
+              <NuxtScrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -39,7 +39,7 @@ const showCode4 = ref(false);
               &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
-              </perfect-scrollbar>
+              </NuxtScrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -75,7 +75,7 @@ const showCode4 = ref(false);
         <ClientOnly>
           <transition name="fade">
             <div v-show="showCode2" v-highlight>
-              <perfect-scrollbar style="height: 400px">
+              <NuxtScrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -89,7 +89,7 @@ const showCode4 = ref(false);
               &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
-              </perfect-scrollbar>
+              </NuxtScrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -167,7 +167,7 @@ const showCode4 = ref(false);
         <ClientOnly>
           <transition name="fade">
             <div v-show="showCode3" v-highlight>
-              <perfect-scrollbar style="height: 400px">
+              <NuxtScrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -196,7 +196,7 @@ const showCode4 = ref(false);
               &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
-              </perfect-scrollbar>
+              </NuxtScrollbar>
             </div>
           </transition>
         </ClientOnly>
@@ -228,7 +228,7 @@ const showCode4 = ref(false);
         <ClientOnly>
           <transition name="fade">
             <div v-show="showCode4" v-highlight>
-              <perfect-scrollbar style="height: 400px">
+              <NuxtScrollbar style="height: 400px">
                 <pre class="language-html shadow-none">
             <code>
               &lt;template&gt; 
@@ -240,7 +240,7 @@ const showCode4 = ref(false);
               &lt;script setup&gt;&lt;/script&gt;
             </code>
           </pre>
-              </perfect-scrollbar>
+              </NuxtScrollbar>
             </div>
           </transition>
         </ClientOnly>
