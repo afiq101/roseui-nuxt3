@@ -16,7 +16,6 @@
 
 .accordion .accordion-group.accordion-default {
   @apply border-b;
-  border-color: rgb(var(--border));
 }
 
 .accordion .accordion-group.accordion-border {

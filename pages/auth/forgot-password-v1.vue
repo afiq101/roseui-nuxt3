@@ -12,9 +12,6 @@ definePageMeta({
         class="flex h-screen items-start md:items-center justify-start md:justify-center"
       >
         <div class="w-full md:w-8/12 lg:w-full px-10 md:px-16 py-12 md:py-20">
-          <div class="text-center">
-            <!-- <img class="w-10 mb-6" src="@/assets/img/logo/logo.svg" /> -->
-          </div>
           <h3 class="mb-5">Forgot Password</h3>
           <p class="mb-5">
             Please input the correct email to reset the password.
@@ -36,7 +33,7 @@ definePageMeta({
         </div>
       </div>
       <div class="absolute bottom-5 left-5 text-xs text-slate-400">
-        © Rose UI 2022
+        © corradUI 2024
       </div>
     </div>
     <div class="flex-auto w-full lg:w-7/12 m-auto hidden md:block">

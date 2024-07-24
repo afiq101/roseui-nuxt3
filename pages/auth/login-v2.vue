@@ -12,7 +12,7 @@ definePageMeta({
     <div class="w-full md:w-3/4 lg:w-1/2 xl:w-2/6">
       <rs-card class="h-screen md:h-auto px-10 md:px-16 py-12 md:py-20 mb-0">
         <h3 class="mb-4">Login</h3>
-        <p class="mb-6">Welcome to Rose UI. Please login to continue.</p>
+        <p class="mb-6">Welcome to corradUI. Please login to continue.</p>
         <div class="grid grid-cols-2">
           <FormKit
             type="text"

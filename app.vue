@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-  title: "RoseUI - NuxtJS Admin Dashboard Template",
+  title: "corradUI - NuxtJS Admin Dashboard Template",
   description: "Home page",
   htmlAttrs: {
     lang: "en",
@@ -16,7 +16,7 @@ onMounted(() => {
   }, 1000);
 
   // Get theme from localStorage
-  let theme = localStorage.getItem("theme") || "rose";
+  let theme = localStorage.getItem("theme") || "default";
   document.documentElement.setAttribute("data-theme", theme);
 });
 </script>

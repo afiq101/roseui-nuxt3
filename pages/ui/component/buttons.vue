@@ -58,6 +58,7 @@ const showCode4 = ref(false);
 
         <div class="flex flex-wrap items-center justify-start gap-x-6">
           <rs-button variant="primary"> Primary </rs-button>
+          <rs-button variant="secondary"> Secondary </rs-button>
           <rs-button variant="info"> Info </rs-button>
           <rs-button variant="success"> Success </rs-button>
           <rs-button variant="warning"> Warning </rs-button>
@@ -80,6 +81,7 @@ const showCode4 = ref(false);
             <code>
               &lt;template&gt; 
                 &lt;rs-button variant="primary"&gt;Primary&lt;/rs-button&gt;
+                &lt;rs-button variant="secondary"&gt;Secondary&lt;/rs-button&gt;
                 &lt;rs-button variant="info"&gt;Info&lt;/rs-button&gt;
                 &lt;rs-button variant="success"&gt;Success&lt;/rs-button&gt;
                 &lt;rs-button variant="warning"&gt;Warning&lt;/rs-button&gt;
@@ -116,11 +118,12 @@ const showCode4 = ref(false);
             Fill
           </div>
           <div class="flex flex-wrap items-center justify-start gap-x-6">
-            <rs-button type="fill" variant="primary"> Primary </rs-button>
-            <rs-button type="fill" variant="info"> Info </rs-button>
-            <rs-button type="fill" variant="success"> Success </rs-button>
-            <rs-button type="fill" variant="warning"> Warning </rs-button>
-            <rs-button type="fill" variant="danger"> Danger </rs-button>
+            <rs-button variant="primary"> Primary </rs-button>
+            <rs-button variant="secondary"> Secondary </rs-button>
+            <rs-button variant="info"> Info </rs-button>
+            <rs-button variant="success"> Success </rs-button>
+            <rs-button variant="warning"> Warning </rs-button>
+            <rs-button variant="danger"> Danger </rs-button>
           </div>
         </div>
 
@@ -133,6 +136,7 @@ const showCode4 = ref(false);
           </div>
           <div class="flex flex-wrap items-center justify-start gap-x-6">
             <rs-button variant="primary-outline"> Primary </rs-button>
+            <rs-button variant="secondary-outline"> Secondary </rs-button>
             <rs-button variant="info-outline"> Info </rs-button>
             <rs-button variant="success-outline"> Success </rs-button>
             <rs-button variant="warning-outline"> Warning </rs-button>
@@ -149,6 +153,7 @@ const showCode4 = ref(false);
           </div>
           <div class="flex flex-wrap items-center justify-start gap-x-6">
             <rs-button variant="primary-text"> Primary </rs-button>
+            <rs-button variant="secondary-text"> Secondary </rs-button>
             <rs-button variant="info-text"> Info </rs-button>
             <rs-button variant="success-text"> Success </rs-button>
             <rs-button variant="warning-text"> Warning </rs-button>
@@ -173,6 +178,7 @@ const showCode4 = ref(false);
               &lt;template&gt; 
                 &lt;!-- Fill Button --&gt;
                 &lt;rs-button variant="primary"&gt;Primary&lt;/rs-button&gt;
+                &lt;rs-button variant="secondary"&gt;Secondary&lt;/rs-button&gt;
                 &lt;rs-button variant="info"&gt;Info&lt;/rs-button&gt;
                 &lt;rs-button variant="success"&gt;Success&lt;/rs-button&gt;
                 &lt;rs-button variant="warning"&gt;Warning&lt;/rs-button&gt;
@@ -180,6 +186,7 @@ const showCode4 = ref(false);
 
                 &lt;!-- Outline Button --&gt;
                 &lt;rs-button variant="primary-outline"&gt;Primary&lt;/rs-button&gt;
+                &lt;rs-button variant="secondary-outline"&gt;Secondary&lt;/rs-button&gt;
                 &lt;rs-button variant="info-outline"&gt;Info&lt;/rs-button&gt;
                 &lt;rs-button variant="success-outline"&gt;Success&lt;/rs-button&gt;
                 &lt;rs-button variant="warning-outline"&gt;Warning&lt;/rs-button&gt;
@@ -187,6 +194,7 @@ const showCode4 = ref(false);
 
                 &lt;!-- Text Button --&gt;
                 &lt;rs-button variant="primary-text"&gt;Primary&lt;/rs-button&gt;
+                &lt;rs-button variant="secondary-text"&gt;Secondary&lt;/rs-button&gt;
                 &lt;rs-button variant="info-text"&gt;Info&lt;/rs-button&gt;
                 &lt;rs-button variant="success-text"&gt;Success&lt;/rs-button&gt;
                 &lt;rs-button variant="warning-text"&gt;Warning&lt;/rs-button&gt;

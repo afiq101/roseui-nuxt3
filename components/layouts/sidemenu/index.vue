@@ -34,10 +34,11 @@ onMounted(() => {
     <div class="py-2 px-4">
       <nuxt-link to="/">
         <div class="flex flex-auto gap-3 justify-center items-center h-[48px]">
-          <img class="h-10 block" src="@/assets/img/logo/logo.png" alt="" />
-          <span class="text-xl font-semibold text-primary dark:text-white"
-            >Rose UI</span
-          >
+          <img
+            class="h-10 block"
+            src="@/assets/img/logo/logo-word-black-ui.svg"
+            alt=""
+          />
         </div>
       </nuxt-link>
     </div>

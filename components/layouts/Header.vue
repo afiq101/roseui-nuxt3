@@ -75,7 +75,7 @@ onMounted(() => {
       <div class="flex" v-else>
         <nuxt-link to="/">
           <div class="flex flex-auto gap-3 justify-center items-center">
-            <img class="h-24 block" src="@/assets/img/logo/logo.png" alt="" />
+            <img class="h-24 block" src="@/assets/img/logo/logo-word-black-ui.svg" alt="" />
           </div>
         </nuxt-link>
       </div>
